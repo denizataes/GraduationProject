@@ -22,23 +22,27 @@ final class APICaller {
             url = url + "&page=\(randomPageNumber)"
         }
             
-        guard let url = URL(string: url) else { return }
-        
-        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+        if let url = URL(string: url) {
             
-            guard let data = data, error == nil else {
-                onCompletion(.failure(.failedToGetData))
-                return
+            let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+                
+                guard let data = data, error == nil else {
+                    onCompletion(.failure(.failedToGetData))
+                    return
+                }
+                
+                guard let results = try? JSONDecoder().decode(expecting.self, from: data) else {
+                    onCompletion(.failure(.failedToGetData))
+                    return
+                }
+                
+                onCompletion(.success(results))
             }
-            
-            guard let results = try? JSONDecoder().decode(expecting.self, from: data) else {
-                onCompletion(.failure(.failedToGetData))
-                return
-            }
-            
-            onCompletion(.success(results))
+            task.resume()
         }
-        task.resume()
+        else {
+            onCompletion(.failure(.failedToGetData))
+        }
     }
     
     func fetchGamesWithPage<T: Codable>(url: String, expecting: T.Type, pageNumber: Int, onCompletion: @escaping (Result<T, APIError>) -> Void) {
@@ -82,7 +86,7 @@ final class APICaller {
     }
     
     
-    func searchGames(with query: String, onCompletion: @escaping (Result<[Game], APIError>) -> Void) {
+    func searchGames(with query: String, onCompletion: @escaping (Result<[GameResult], APIError>) -> Void) {
         
         guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
         
@@ -99,7 +103,7 @@ final class APICaller {
                 return
             }
             
-            onCompletion(.success(results.results))
+            onCompletion(.success(results.results ?? []))
         }
         task.resume()
     }

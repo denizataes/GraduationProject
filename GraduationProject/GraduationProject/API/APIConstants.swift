@@ -14,7 +14,7 @@ struct APIConstants {
     
     static let DISCOVER_URL = "\(BASE_URL)/games?key=\(API_KEY)&ordering=-added&page_size=40"
     static let METACRITIC_URL = "\(BASE_URL)/games?key=\(API_KEY)&dates=2000-01-01,2022-12-31&ordering=-metacritic&page_size=50"
-    static let UPCOMING_URL = "\(BASE_URL)/games?key=\(API_KEY)&dates=2022-08-28,2025-12-31&ordering=-added&page_size=50"
+    static let LATEST_URL = "\(BASE_URL)/games?key=\(API_KEY)&dates=2022-12-01,2023-01-31&ordering=-added&page_size=50"
     static let POPULAR_URL = "\(BASE_URL)/games?key=\(API_KEY)&dates=2022-01-01,2022-12-31&ordering=-added"
     static let PLATFORM_URL = "\(BASE_URL)/platforms?key=\(API_KEY)"
     static let GENRE_URL = "\(BASE_URL)/genres?key=\(API_KEY)"

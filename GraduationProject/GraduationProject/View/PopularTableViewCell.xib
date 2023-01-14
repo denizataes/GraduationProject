@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="popularCell" rowHeight="114" id="KGk-i7-Jjw" customClass="PopularTableViewCell" customModule="GraduationProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="404" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="404" height="114"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJ8-at-OTP">
+                        <rect key="frame" x="0.0" y="0.0" width="404" height="114"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game3" translatesAutoresizingMaskIntoConstraints="NO" id="bqF-Rz-fqc">
+                                <rect key="frame" x="8" y="10" width="70.333333333333329" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="CES-ad-B1t"/>
+                                    <constraint firstAttribute="width" constant="70.329999999999998" id="jpr-Xk-hE7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red Dead Redemption II" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3L-VI-99k">
+                                <rect key="frame" x="86" y="10" width="310" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="p7R-53-eVu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="i5D-gX-EYV">
+                                <rect key="frame" x="86" y="51" width="22" height="19"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xta-lv-6Qr">
+                                <rect key="frame" x="88.333333333333329" y="74.666666666666657" width="19.666666666666671" height="17.333333333333343"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="17 Eylül 2013" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMt-mf-TTx">
+                                <rect key="frame" x="116.00000000000001" y="82" width="62.666666666666671" height="13"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="102 Saat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mD-iC-iZP">
+                                <rect key="frame" x="116" y="54" width="270" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="Nyu-nD-5pf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="lMt-mf-TTx" secondAttribute="bottom" constant="19" id="1SQ-bW-6M3"/>
+                            <constraint firstItem="N3L-VI-99k" firstAttribute="leading" secondItem="bqF-Rz-fqc" secondAttribute="trailing" constant="7.6699999999999999" id="4ib-gw-4ko"/>
+                            <constraint firstAttribute="bottom" secondItem="bqF-Rz-fqc" secondAttribute="bottom" constant="12" id="7Ey-a4-n6m"/>
+                            <constraint firstItem="N3L-VI-99k" firstAttribute="leading" secondItem="bqF-Rz-fqc" secondAttribute="trailing" constant="7.6699999999999999" id="96M-Y0-71h"/>
+                            <constraint firstItem="4mD-iC-iZP" firstAttribute="leading" secondItem="i5D-gX-EYV" secondAttribute="trailing" constant="8" symbolic="YES" id="9Hv-26-ALL"/>
+                            <constraint firstAttribute="trailing" secondItem="N3L-VI-99k" secondAttribute="trailing" constant="8" id="9Wt-m7-wlt"/>
+                            <constraint firstItem="bqF-Rz-fqc" firstAttribute="leading" secondItem="LJ8-at-OTP" secondAttribute="leading" constant="8" id="Bhi-Eq-tLm"/>
+                            <constraint firstItem="i5D-gX-EYV" firstAttribute="top" secondItem="N3L-VI-99k" secondAttribute="bottom" constant="4" id="FtE-23-Doi"/>
+                            <constraint firstItem="lMt-mf-TTx" firstAttribute="leading" secondItem="LJ8-at-OTP" secondAttribute="leading" constant="116" id="IEZ-or-b4a"/>
+                            <constraint firstItem="bqF-Rz-fqc" firstAttribute="top" secondItem="LJ8-at-OTP" secondAttribute="top" constant="10" id="Ij2-j1-UTi"/>
+                            <constraint firstItem="lMt-mf-TTx" firstAttribute="leading" secondItem="xta-lv-6Qr" secondAttribute="trailing" constant="8" symbolic="YES" id="Qdc-wX-MOi"/>
+                            <constraint firstItem="lMt-mf-TTx" firstAttribute="top" secondItem="4mD-iC-iZP" secondAttribute="bottom" constant="15" id="bpR-DT-k8b"/>
+                            <constraint firstItem="lMt-mf-TTx" firstAttribute="leading" secondItem="4mD-iC-iZP" secondAttribute="leading" id="c7I-Ph-YYD"/>
+                            <constraint firstItem="xta-lv-6Qr" firstAttribute="top" secondItem="i5D-gX-EYV" secondAttribute="bottom" constant="2.6666666666666714" id="iFQ-6k-zBT"/>
+                            <constraint firstItem="N3L-VI-99k" firstAttribute="top" secondItem="LJ8-at-OTP" secondAttribute="top" constant="10" id="pOe-Cd-eHZ"/>
+                            <constraint firstItem="i5D-gX-EYV" firstAttribute="leading" secondItem="bqF-Rz-fqc" secondAttribute="trailing" constant="7.6666666666666714" id="whG-Iy-HjR"/>
+                            <constraint firstItem="i5D-gX-EYV" firstAttribute="top" secondItem="N3L-VI-99k" secondAttribute="bottom" constant="4" id="yCr-2K-Gav"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="LJ8-at-OTP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="LvN-dl-ojz"/>
+                    <constraint firstAttribute="trailing" secondItem="LJ8-at-OTP" secondAttribute="trailing" id="S4p-kO-VEF"/>
+                    <constraint firstItem="LJ8-at-OTP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jph-YX-h3C"/>
+                    <constraint firstAttribute="bottom" secondItem="LJ8-at-OTP" secondAttribute="bottom" id="qX9-bH-ozk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="durationLabel" destination="4mD-iC-iZP" id="3rw-Ig-pJt"/>
+                <outlet property="gameImageView" destination="bqF-Rz-fqc" id="5cJ-va-KOw"/>
+                <outlet property="releaseDateLabel" destination="lMt-mf-TTx" id="9B7-Q1-Vkd"/>
+                <outlet property="titleLabel" destination="N3L-VI-99k" id="K2e-v6-cFt"/>
+                <outlet property="viewComponent" destination="LJ8-at-OTP" id="5J6-Pk-xml"/>
+            </connections>
+            <point key="canvasLocation" x="240" y="-116"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="clock" catalog="system" width="128" height="123"/>
+        <image name="game3" width="512" height="512"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
