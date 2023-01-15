@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var collectionViewActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableViewActivityIndicator: UIActivityIndicatorView!
-    private var popularGameList: [PopularCellModel] = []
+    private var popularGameList: [SearchCellModel] = []
     private var latestGameList: [LatestCellModel] = []
 
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class HomeViewController: UIViewController {
         tableView.showsVerticalScrollIndicator = false
         collectionView.delegate = self
         collectionView.dataSource = self
-        tableView.register(UINib(nibName: "PopularTableViewCell", bundle: nil), forCellReuseIdentifier: "popularCell")
+        tableView.register(UINib(nibName: "SearchGameTableViewCell", bundle: nil), forCellReuseIdentifier: "searchCell")
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -82,7 +82,7 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "popularCell", for: indexPath) as! PopularTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! SearchGameTableViewCell
         let model = popularGameList[indexPath.item]
         cell.configure(with: model)
         return cell
@@ -113,7 +113,7 @@ private extension HomeViewController {
           
           DispatchQueue.main.async {
               self?.collectionView.reloadData()
-              self?.tableViewActivityIndicator.stopAnimating()
+              self?.collectionViewActivityIndicator.stopAnimating()
           }
           
       }

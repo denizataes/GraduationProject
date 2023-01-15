@@ -45,6 +45,31 @@ final class APICaller {
         }
     }
     
+    func fetchGamesWithSearchQuery<T: Codable>(url: String, filter: String, query: String, expecting: T.Type, onCompletion: @escaping (Result<T, APIError>) -> Void) {
+        
+        if let url = URL(string: url + query + "&ordering=" + filter + "&search_exact=true") {
+            
+            let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+                
+                guard let data = data, error == nil else {
+                    onCompletion(.failure(.failedToGetData))
+                    return
+                }
+                
+                guard let results = try? JSONDecoder().decode(expecting.self, from: data) else {
+                    onCompletion(.failure(.failedToGetData))
+                    return
+                }
+                
+                onCompletion(.success(results))
+            }
+            task.resume()
+        }
+        else {
+            onCompletion(.failure(.failedToGetData))
+        }
+    }
+    
     func fetchGamesWithPage<T: Codable>(url: String, expecting: T.Type, pageNumber: Int, onCompletion: @escaping (Result<T, APIError>) -> Void) {
         guard let url = URL(string: "\(APIConstants.BASE_URL)/games?key=\(APIConstants.API_KEY)&ordering=-added&page_size=20&page=\(pageNumber)") else { return }
         

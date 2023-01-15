@@ -30,6 +30,11 @@
 		A0CC33F92972D7340020CF0B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC33F82972D7340020CF0B /* HomeViewModel.swift */; };
 		A0CC33FB2972D7C00020CF0B /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC33FA2972D7C00020CF0B /* HomeModel.swift */; };
 		A0CC33FD2972EFC90020CF0B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC33FC2972EFC90020CF0B /* Utils.swift */; };
+		A0CC33FF297307DF0020CF0B /* SearchSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC33FE297307DF0020CF0B /* SearchSection.swift */; };
+		A0CC3405297309BC0020CF0B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC3404297309BC0020CF0B /* SearchViewModel.swift */; };
+		A0CC3407297309C70020CF0B /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC3406297309C70020CF0B /* SearchModel.swift */; };
+		A0CC340A29730E290020CF0B /* SearchGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC340829730E290020CF0B /* SearchGameTableViewCell.swift */; };
+		A0CC340B29730E290020CF0B /* SearchGameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0CC340929730E290020CF0B /* SearchGameTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +63,11 @@
 		A0CC33F82972D7340020CF0B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A0CC33FA2972D7C00020CF0B /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		A0CC33FC2972EFC90020CF0B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		A0CC33FE297307DF0020CF0B /* SearchSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSection.swift; sourceTree = "<group>"; };
+		A0CC3404297309BC0020CF0B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		A0CC3406297309C70020CF0B /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		A0CC340829730E290020CF0B /* SearchGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGameTableViewCell.swift; sourceTree = "<group>"; };
+		A0CC340929730E290020CF0B /* SearchGameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchGameTableViewCell.xib; sourceTree = "<group>"; };
 		C5F6DC3191B47715A7084DEA /* Pods_GraduationProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraduationProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D896399394417AED06BF2934 /* Pods-GraduationProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraduationProject.debug.xcconfig"; path = "Target Support Files/Pods-GraduationProject/Pods-GraduationProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +176,7 @@
 			children = (
 				A0CC33F62972D3920020CF0B /* Extensions.swift */,
 				A0CC33FC2972EFC90020CF0B /* Utils.swift */,
+				A0CC33FE297307DF0020CF0B /* SearchSection.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -187,6 +198,8 @@
 				A08DDA442971D902009C9031 /* LatestCollectionViewCell.swift */,
 				A08DDA462971E3A6009C9031 /* PopularTableViewCell.swift */,
 				A08DDA472971E3A6009C9031 /* PopularTableViewCell.xib */,
+				A0CC340829730E290020CF0B /* SearchGameTableViewCell.swift */,
+				A0CC340929730E290020CF0B /* SearchGameTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +212,7 @@
 				A08DDA3C2971CD96009C9031 /* GameDetail.swift */,
 				A08DDA3E2971CD9D009C9031 /* Platform.swift */,
 				A08DDA402971CDA3009C9031 /* Genre.swift */,
+				A0CC3406297309C70020CF0B /* SearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				A0CC33F82972D7340020CF0B /* HomeViewModel.swift */,
+				A0CC3404297309BC0020CF0B /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -273,6 +288,7 @@
 			files = (
 				A08DDA242971CB66009C9031 /* LaunchScreen.storyboard in Resources */,
 				A08DDA212971CB66009C9031 /* Assets.xcassets in Resources */,
+				A0CC340B29730E290020CF0B /* SearchGameTableViewCell.xib in Resources */,
 				A08DDA1C2971CB65009C9031 /* Main.storyboard in Resources */,
 				A08DDA492971E3A6009C9031 /* PopularTableViewCell.xib in Resources */,
 			);
@@ -329,6 +345,7 @@
 			files = (
 				A08DDA3F2971CD9D009C9031 /* Platform.swift in Sources */,
 				A08DDA192971CB65009C9031 /* HomeViewController.swift in Sources */,
+				A0CC33FF297307DF0020CF0B /* SearchSection.swift in Sources */,
 				A08DDA392971CD79009C9031 /* APIEndpoints.swift in Sources */,
 				A0CC33F92972D7340020CF0B /* HomeViewModel.swift in Sources */,
 				A08DDA412971CDA3009C9031 /* Genre.swift in Sources */,
@@ -340,7 +357,10 @@
 				A08DDA172971CB65009C9031 /* SceneDelegate.swift in Sources */,
 				A0CC33FD2972EFC90020CF0B /* Utils.swift in Sources */,
 				A08DDA352971CD52009C9031 /* APICaller.swift in Sources */,
+				A0CC3405297309BC0020CF0B /* SearchViewModel.swift in Sources */,
+				A0CC340A29730E290020CF0B /* SearchGameTableViewCell.swift in Sources */,
 				A0CC33F72972D3920020CF0B /* Extensions.swift in Sources */,
+				A0CC3407297309C70020CF0B /* SearchModel.swift in Sources */,
 				A08DDA1F2971CB65009C9031 /* GraduationProject.xcdatamodeld in Sources */,
 				A08DDA482971E3A6009C9031 /* PopularTableViewCell.swift in Sources */,
 				A08DDA3D2971CD96009C9031 /* GameDetail.swift in Sources */,

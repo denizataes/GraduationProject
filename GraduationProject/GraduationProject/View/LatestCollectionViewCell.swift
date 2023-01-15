@@ -27,6 +27,8 @@ class LatestCollectionViewCell: UICollectionViewCell {
     }
     
     private func configurePhotoView(){
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.sizeToFit()
         imageView.layer.cornerRadius = 15
         imageView.layer.shadowRadius = 15
     }

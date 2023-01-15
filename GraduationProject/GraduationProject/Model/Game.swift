@@ -155,7 +155,7 @@ struct ParentPlatform: Codable {
 
 // MARK: - PlatformElement
 struct PlatformElement: Codable {
-    let platform: PlatformPlatform?
+    let platform: PlatformItem?
     let releasedAt: String?
     let requirementsEn, requirementsRu: Requirements?
 
@@ -168,7 +168,7 @@ struct PlatformElement: Codable {
 }
 
 // MARK: - PlatformPlatform
-struct PlatformPlatform: Codable {
+struct PlatformItem: Codable {
     let id: Int?
     let name, slug: String?
     let image, yearEnd: JSONNull?

@@ -105,8 +105,8 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <constraints>
-                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="leading" secondItem="24f-Ht-WvL" secondAttribute="leadingMargin" constant="-8" id="EG1-Ig-PAl"/>
-                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="top" secondItem="24f-Ht-WvL" secondAttribute="topMargin" constant="-8" id="x78-6U-hq7"/>
+                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="top" secondItem="24f-Ht-WvL" secondAttribute="topMargin" constant="-8" id="TEH-Zq-EEn"/>
+                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="leading" secondItem="24f-Ht-WvL" secondAttribute="leadingMargin" constant="-8" id="X07-WA-tcn"/>
                                         </constraints>
                                         <size key="customSize" width="159" height="249"/>
                                         <connections>
@@ -151,11 +151,6 @@
                                     <constraint firstAttribute="width" constant="361" id="GVX-Gb-kVw"/>
                                     <constraint firstAttribute="height" constant="336" id="j2m-KI-nmQ"/>
                                 </constraints>
-                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" id="VBm-9H-zWM">
-                                    <rect key="frame" x="0.0" y="0.0" width="361" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="color" systemColor="systemPurpleColor"/>
-                                </activityIndicatorView>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Oyunlar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfS-Y3-Eif">
                                 <rect key="frame" x="97" y="397" width="79" height="28"/>
@@ -163,6 +158,11 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" id="VBm-9H-zWM">
+                                <rect key="frame" x="16" y="404" width="361" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" systemColor="systemPurpleColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -224,10 +224,32 @@
                     <view key="view" contentMode="scaleToFill" id="tso-Ep-o6W">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1j6-6m-Otz">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="gZi-wm-bje">
+                                <rect key="frame" x="0.0" y="404" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                <color key="color" systemColor="systemPurpleColor"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hfw-mv-PtG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1j6-6m-Otz" firstAttribute="top" secondItem="hfw-mv-PtG" secondAttribute="top" id="B6j-Ux-OVE"/>
+                            <constraint firstItem="1j6-6m-Otz" firstAttribute="leading" secondItem="hfw-mv-PtG" secondAttribute="leading" id="CfG-fW-85T"/>
+                            <constraint firstItem="hfw-mv-PtG" firstAttribute="trailing" secondItem="1j6-6m-Otz" secondAttribute="trailing" id="Qwx-No-d2l"/>
+                            <constraint firstItem="hfw-mv-PtG" firstAttribute="bottom" secondItem="1j6-6m-Otz" secondAttribute="bottom" id="tFp-Hb-I9P"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Fhg-Si-HZI"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="gZi-wm-bje" id="V2y-9a-e2k"/>
+                        <outlet property="tableView" destination="1j6-6m-Otz" id="FeA-lr-yLm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N6y-FJ-7bK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

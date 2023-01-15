@@ -17,77 +17,49 @@
                 <rect key="frame" x="0.0" y="0.0" width="404" height="114"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJ8-at-OTP">
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LJ8-at-OTP">
                         <rect key="frame" x="0.0" y="0.0" width="404" height="114"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game3" translatesAutoresizingMaskIntoConstraints="NO" id="bqF-Rz-fqc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game3" translatesAutoresizingMaskIntoConstraints="NO" id="bqF-Rz-fqc">
                                 <rect key="frame" x="8" y="10" width="70.333333333333329" height="92"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="92" id="CES-ad-B1t"/>
-                                    <constraint firstAttribute="width" constant="70.329999999999998" id="jpr-Xk-hE7"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red Dead Redemption II" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3L-VI-99k">
-                                <rect key="frame" x="86" y="10" width="310" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="p7R-53-eVu"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red Dead Redemption II" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3L-VI-99k">
+                                <rect key="frame" x="86.000000000000014" y="10" width="183.33333333333337" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="i5D-gX-EYV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="i5D-gX-EYV">
                                 <rect key="frame" x="86" y="51" width="22" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xta-lv-6Qr">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xta-lv-6Qr">
                                 <rect key="frame" x="88.333333333333329" y="74.666666666666657" width="19.666666666666671" height="17.333333333333343"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="17 Eylül 2013" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMt-mf-TTx">
-                                <rect key="frame" x="116.00000000000001" y="82" width="62.666666666666671" height="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="17 Eylül 2013" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMt-mf-TTx">
+                                <rect key="frame" x="116.00000000000001" y="83" width="62.666666666666671" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="102 Saat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mD-iC-iZP">
-                                <rect key="frame" x="116" y="54" width="270" height="13"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="270" id="Nyu-nD-5pf"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" fixedFrame="YES" text="102 Saat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mD-iC-iZP">
+                                <rect key="frame" x="116" y="57" width="63" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="lMt-mf-TTx" secondAttribute="bottom" constant="19" id="1SQ-bW-6M3"/>
-                            <constraint firstItem="N3L-VI-99k" firstAttribute="leading" secondItem="bqF-Rz-fqc" secondAttribute="trailing" constant="7.6699999999999999" id="4ib-gw-4ko"/>
-                            <constraint firstAttribute="bottom" secondItem="bqF-Rz-fqc" secondAttribute="bottom" constant="12" id="7Ey-a4-n6m"/>
-                            <constraint firstItem="N3L-VI-99k" firstAttribute="leading" secondItem="bqF-Rz-fqc" secondAttribute="trailing" constant="7.6699999999999999" id="96M-Y0-71h"/>
-                            <constraint firstItem="4mD-iC-iZP" firstAttribute="leading" secondItem="i5D-gX-EYV" secondAttribute="trailing" constant="8" symbolic="YES" id="9Hv-26-ALL"/>
-                            <constraint firstAttribute="trailing" secondItem="N3L-VI-99k" secondAttribute="trailing" constant="8" id="9Wt-m7-wlt"/>
-                            <constraint firstItem="bqF-Rz-fqc" firstAttribute="leading" secondItem="LJ8-at-OTP" secondAttribute="leading" constant="8" id="Bhi-Eq-tLm"/>
-                            <constraint firstItem="i5D-gX-EYV" firstAttribute="top" secondItem="N3L-VI-99k" secondAttribute="bottom" constant="4" id="FtE-23-Doi"/>
-                            <constraint firstItem="lMt-mf-TTx" firstAttribute="leading" secondItem="LJ8-at-OTP" secondAttribute="leading" constant="116" id="IEZ-or-b4a"/>
-                            <constraint firstItem="bqF-Rz-fqc" firstAttribute="top" secondItem="LJ8-at-OTP" secondAttribute="top" constant="10" id="Ij2-j1-UTi"/>
-                            <constraint firstItem="lMt-mf-TTx" firstAttribute="leading" secondItem="xta-lv-6Qr" secondAttribute="trailing" constant="8" symbolic="YES" id="Qdc-wX-MOi"/>
-                            <constraint firstItem="lMt-mf-TTx" firstAttribute="top" secondItem="4mD-iC-iZP" secondAttribute="bottom" constant="15" id="bpR-DT-k8b"/>
-                            <constraint firstItem="lMt-mf-TTx" firstAttribute="leading" secondItem="4mD-iC-iZP" secondAttribute="leading" id="c7I-Ph-YYD"/>
-                            <constraint firstItem="xta-lv-6Qr" firstAttribute="top" secondItem="i5D-gX-EYV" secondAttribute="bottom" constant="2.6666666666666714" id="iFQ-6k-zBT"/>
-                            <constraint firstItem="N3L-VI-99k" firstAttribute="top" secondItem="LJ8-at-OTP" secondAttribute="top" constant="10" id="pOe-Cd-eHZ"/>
-                            <constraint firstItem="i5D-gX-EYV" firstAttribute="leading" secondItem="bqF-Rz-fqc" secondAttribute="trailing" constant="7.6666666666666714" id="whG-Iy-HjR"/>
-                            <constraint firstItem="i5D-gX-EYV" firstAttribute="top" secondItem="N3L-VI-99k" secondAttribute="bottom" constant="4" id="yCr-2K-Gav"/>
-                        </constraints>
                     </view>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="LJ8-at-OTP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="LvN-dl-ojz"/>
-                    <constraint firstAttribute="trailing" secondItem="LJ8-at-OTP" secondAttribute="trailing" id="S4p-kO-VEF"/>
-                    <constraint firstItem="LJ8-at-OTP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jph-YX-h3C"/>
-                    <constraint firstAttribute="bottom" secondItem="LJ8-at-OTP" secondAttribute="bottom" id="qX9-bH-ozk"/>
-                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
@@ -97,7 +69,7 @@
                 <outlet property="titleLabel" destination="N3L-VI-99k" id="K2e-v6-cFt"/>
                 <outlet property="viewComponent" destination="LJ8-at-OTP" id="5J6-Pk-xml"/>
             </connections>
-            <point key="canvasLocation" x="240" y="-116"/>
+            <point key="canvasLocation" x="239.69465648854961" y="-116.19718309859155"/>
         </tableViewCell>
     </objects>
     <resources>
