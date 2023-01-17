@@ -64,6 +64,7 @@ class SearchGameTableViewCell: UITableViewCell {
 
 }
 struct SearchCellModel {
+    let id: Int
     let imageURL: String
     let playTime: String
     let releaseDate: String

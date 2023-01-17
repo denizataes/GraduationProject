@@ -52,7 +52,14 @@ class HomeViewController: UIViewController {
 // MARK: CollectionView Delegate
 extension HomeViewController: UICollectionViewDelegate {
  
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let vc =  storyboard?.instantiateViewController(withIdentifier: "gameDetailViewController") as? GameDetailViewController{
+            let game = latestGameList[indexPath.item]
+            let gameID = game.id
+            vc.id = String(gameID)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 // MARK: CollectionView Datasource
 extension HomeViewController: UICollectionViewDataSource {
@@ -86,6 +93,16 @@ extension HomeViewController: UITableViewDataSource {
         let model = popularGameList[indexPath.item]
         cell.configure(with: model)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if let vc =  storyboard?.instantiateViewController(withIdentifier: "gameDetailViewController") as? GameDetailViewController{
+            let game = popularGameList[indexPath.row]
+            let gameID = game.id
+            vc.id = String(gameID)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     

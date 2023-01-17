@@ -155,9 +155,9 @@ final class APICaller {
     }
 
 
-    func fetchSpecificGameDetails<T: Codable>(with gameId: String, endpoint: APIEndpoints, expecting: T.Type, onCompletion: @escaping (Result<T, APIError>) -> Void) {
+    func fetchSpecificGameDetails<T: Codable>(with gameId: String, expecting: T.Type, onCompletion: @escaping (Result<T, APIError>) -> Void) {
 
-        guard let url = URL(string: "\(APIConstants.BASE_URL)/games/\(gameId)/\(endpoint)?key=\(APIConstants.API_KEY)") else { return }
+        guard let url = URL(string: "\(APIConstants.BASE_URL)/games/\(gameId)?key=\(APIConstants.API_KEY)") else { return }
 
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {

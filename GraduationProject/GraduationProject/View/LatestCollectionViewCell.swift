@@ -35,6 +35,7 @@ class LatestCollectionViewCell: UICollectionViewCell {
 }
 
 struct LatestCellModel {
+    let id: Int
     let imageURL: String
     let vote: String
     let title: String

@@ -49,7 +49,7 @@ class SearchViewController: UIViewController{
         searchController.searchBar.scopeButtonTitles = sections
         searchController.searchBar.delegate = self
         searchController.searchBar.setValue("İptal", forKey: "cancelButtonText")
-        searchController.searchBar.placeholder = "Oyun ya da oyuncu ara... 🎮👩🏼‍💻👨🏼‍💻"
+        searchController.searchBar.placeholder = "Oyun ara... 🎮"
 
         
         //MARK: Register cell
@@ -60,6 +60,15 @@ class SearchViewController: UIViewController{
 
 }
 extension SearchViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if let vc =  storyboard?.instantiateViewController(withIdentifier: "gameDetailViewController") as? GameDetailViewController{
+            let game = searchGameList[indexPath.row]
+            let gameID = game.id
+            vc.id = String(gameID)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     
 }
 
