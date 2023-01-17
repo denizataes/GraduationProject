@@ -23,6 +23,7 @@ class GameDetailViewController: UIViewController {
     @IBOutlet weak var genreTableView: UITableView!
     @IBOutlet weak var platformTableView: UITableView!
     var id: String = ""
+    var imageURL: String = ""
     let viewModel = GameDetailViewModel()
     var genreList = [ResultVM]()
     var platformList = [ResultVM]()
@@ -43,8 +44,8 @@ class GameDetailViewController: UIViewController {
         platformTableView.delegate = self
         
         //MARK: View Setup
-        descriptionLabel.adjustsFontSizeToFitWidth = true
-        descriptionLabel.sizeToFit()
+//        descriptionLabel.adjustsFontSizeToFitWidth = true
+//        descriptionLabel.sizeToFit()
         gameImageView.kf.indicatorType = .activity
         (gameImageView.kf.indicator?.view as? UIActivityIndicatorView)?.color = .purple
         gameImageView.layer.cornerRadius = 8
@@ -56,6 +57,21 @@ class GameDetailViewController: UIViewController {
         platformTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         genreTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
+    }
+    @IBAction func favoriteBtnClicked(_ sender: UIButton) {
+        if favoriteButton.image(for: .normal) == UIImage(systemName: "heart") {
+            viewModel.saveFavorite(vm: .init(gameID: id, backgroundImage: imageURL , name: gameTitleLabel.text ?? "", createdDate: getDate()))
+        }
+        else{
+            viewModel.deleteFavorite(id: id)
+        }
+
+    }
+    private func getDate() -> String{
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "DD.MM.YY HH:mm"
+        return dateFormatter.string(from: date)
     }
 }
 
@@ -103,13 +119,53 @@ extension GameDetailViewController{
             }
         }
         
+        viewModel.didFavoriteSaved = { [weak self] in
+            DispatchQueue.main.async {
+                self?.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            }
+        }
+        
+        viewModel.didFavoriteDelete = { [weak self] in
+            DispatchQueue.main.async {
+                self?.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            }
+        }
+        
+        viewModel.onErrorDeleteFavorite = { [weak self] in
+            DispatchQueue.main.async {
+                let alertController = UIAlertController(title: "Alert", message: "Favori kaldırılırken  hata oluştu! Lütfen daha sonra tekrar deneyin.", preferredStyle: .alert)
+                alertController.addAction(.init(title: "Ok", style: .default))
+                self?.present(alertController, animated: true, completion: nil)
+            }
+        }
+        
+        viewModel.onErrorFavorite = { [weak self] in
+            DispatchQueue.main.async {
+                let alertController = UIAlertController(title: "Alert", message: "Favorilere eklenirken hata oluştu! Lütfen daha sonra tekrar deneyin.", preferredStyle: .alert)
+                alertController.addAction(.init(title: "Ok", style: .default))
+                self?.present(alertController, animated: true, completion: nil)
+            }
+        }
+        
+        viewModel.didFavorited  = { [weak self] response in
+            DispatchQueue.main.async {
+                if response{
+                    self?.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                }
+                else{
+                    self?.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                }
+            }
+        }
+        
+        
         viewModel.gameDetail = { [weak self] response in
             DispatchQueue.main.async{
                 self?.platformList = response.platforms
                 self?.genreList = response.genres
                 self?.genreTableView.reloadData()
                 self?.platformTableView.reloadData()
-                
+                self?.imageURL = response.backgroundImage
                 self?.gameImageView.kf.setImage(with: URL(string: response.backgroundImage))
                 self?.gameTitleLabel.text = response.name
                 self?.releaseDateLabel.text = response.releaseDate

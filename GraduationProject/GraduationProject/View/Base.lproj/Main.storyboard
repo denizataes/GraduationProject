@@ -252,17 +252,38 @@
             </objects>
             <point key="canvasLocation" x="3019.0839694656488" y="673.94366197183103"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorites View Controller-->
         <scene sceneID="pzW-5y-U1g">
             <objects>
-                <viewController id="9ZB-j2-Pnl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="favoritesViewController" id="9ZB-j2-Pnl" customClass="FavoritesViewController" customModule="GraduationProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uKX-iY-sBG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AKt-68-RPq">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="yqS-1f-GYw">
+                                <rect key="frame" x="0.0" y="404" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" systemColor="systemPurpleColor"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dvP-7g-9KZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AKt-68-RPq" firstAttribute="top" secondItem="dvP-7g-9KZ" secondAttribute="top" id="UMA-sm-UeG"/>
+                            <constraint firstAttribute="bottom" secondItem="AKt-68-RPq" secondAttribute="bottom" id="lTs-Yg-RBG"/>
+                            <constraint firstItem="AKt-68-RPq" firstAttribute="leading" secondItem="dvP-7g-9KZ" secondAttribute="leading" id="nnQ-hk-etj"/>
+                            <constraint firstItem="dvP-7g-9KZ" firstAttribute="trailing" secondItem="AKt-68-RPq" secondAttribute="trailing" id="wIJ-3d-0MH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WhN-W7-nMl"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="yqS-1f-GYw" id="2VF-yq-mkT"/>
+                        <outlet property="tableView" destination="AKt-68-RPq" id="fl7-I9-tmK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rj1-Aj-tuJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -277,6 +298,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemPurpleColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="yh6-Au-Juy" kind="relationship" relationship="viewControllers" id="Qrl-z0-3PL"/>
@@ -406,6 +428,9 @@
                                                                         <buttonConfiguration key="configuration" style="gray" image="heart" catalog="system">
                                                                             <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                                                         </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="favoriteBtnClicked:" destination="zGS-Sc-oUh" eventType="touchUpInside" id="XAp-Ie-jQb"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xn8-Z9-hte">
                                                                         <rect key="frame" x="0.0" y="71.333333333333343" width="36" height="34.333333333333343"/>
@@ -501,7 +526,7 @@
                                     <constraint firstAttribute="height" constant="253" id="ncp-gr-yHF"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAI-YP-VPH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAI-YP-VPH">
                                 <rect key="frame" x="16" y="368" width="361" height="322"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="243" id="aAf-5d-K14"/>

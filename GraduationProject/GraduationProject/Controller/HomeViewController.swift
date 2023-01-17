@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     private func configureNavBar() {
         
         //collectionView!.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        navigationController?.navigationBar.topItem?.title = "Ana Sayfa"
+        navigationController?.navigationBar.topItem?.title = "Ana Sayfa🔥"
     }
     
     private func configureDelegate() {

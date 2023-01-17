@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		52F9FC072A5E293F117542E0 /* Pods_GraduationProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F6DC3191B47715A7084DEA /* Pods_GraduationProject.framework */; };
+		A00B7A5229770013003F9760 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00B7A5129770013003F9760 /* FavoritesViewController.swift */; };
+		A00B7A5429770194003F9760 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00B7A5329770194003F9760 /* CoreDataManager.swift */; };
+		A022BA8E29770C2200E950AC /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022BA8D29770C2200E950AC /* FavoriteViewModel.swift */; };
+		A022BA912977199500E950AC /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022BA8F2977199500E950AC /* FavoriteTableViewCell.swift */; };
+		A022BA922977199500E950AC /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A022BA902977199500E950AC /* FavoriteTableViewCell.xib */; };
 		A08DDA152971CB65009C9031 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DDA142971CB65009C9031 /* AppDelegate.swift */; };
 		A08DDA172971CB65009C9031 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DDA162971CB65009C9031 /* SceneDelegate.swift */; };
 		A08DDA192971CB65009C9031 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DDA182971CB65009C9031 /* HomeViewController.swift */; };
@@ -44,6 +49,11 @@
 
 /* Begin PBXFileReference section */
 		04916B39388A12D6ACD2A965 /* Pods-GraduationProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraduationProject.release.xcconfig"; path = "Target Support Files/Pods-GraduationProject/Pods-GraduationProject.release.xcconfig"; sourceTree = "<group>"; };
+		A00B7A5129770013003F9760 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		A00B7A5329770194003F9760 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A022BA8D29770C2200E950AC /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		A022BA8F2977199500E950AC /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		A022BA902977199500E950AC /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteTableViewCell.xib; sourceTree = "<group>"; };
 		A08DDA112971CB65009C9031 /* GraduationProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraduationProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08DDA142971CB65009C9031 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A08DDA162971CB65009C9031 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -199,6 +209,7 @@
 				A0CC33F62972D3920020CF0B /* Extensions.swift */,
 				A0CC33FC2972EFC90020CF0B /* Utils.swift */,
 				A0CC33FE297307DF0020CF0B /* SearchSection.swift */,
+				A00B7A5329770194003F9760 /* CoreDataManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -209,6 +220,7 @@
 				A08DDA182971CB65009C9031 /* HomeViewController.swift */,
 				A08DDA422971D3E3009C9031 /* SearchViewController.swift */,
 				A0F33D4C2974980A0041D204 /* GameDetailViewController.swift */,
+				A00B7A5129770013003F9760 /* FavoritesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -225,6 +237,8 @@
 				A0CC340929730E290020CF0B /* SearchGameTableViewCell.xib */,
 				A0DEF4DE2975E3D30036C3FF /* GameDetailTableViewCell.swift */,
 				A0DEF4DF2975E3D30036C3FF /* GameDetailTableViewCell.xib */,
+				A022BA8F2977199500E950AC /* FavoriteTableViewCell.swift */,
+				A022BA902977199500E950AC /* FavoriteTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,6 +259,7 @@
 				A0CC33F82972D7340020CF0B /* HomeViewModel.swift */,
 				A0CC3404297309BC0020CF0B /* SearchViewModel.swift */,
 				A0DEF4D62975A9F00036C3FF /* GameDetailViewModel.swift */,
+				A022BA8D29770C2200E950AC /* FavoriteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -314,6 +329,7 @@
 				A0CC340B29730E290020CF0B /* SearchGameTableViewCell.xib in Resources */,
 				A08DDA1C2971CB65009C9031 /* Main.storyboard in Resources */,
 				A0DEF4E12975E3D30036C3FF /* GameDetailTableViewCell.xib in Resources */,
+				A022BA922977199500E950AC /* FavoriteTableViewCell.xib in Resources */,
 				A08DDA492971E3A6009C9031 /* PopularTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A08DDA3F2971CD9D009C9031 /* Platform.swift in Sources */,
+				A00B7A5229770013003F9760 /* FavoritesViewController.swift in Sources */,
 				A08DDA192971CB65009C9031 /* HomeViewController.swift in Sources */,
 				A0CC33FF297307DF0020CF0B /* SearchSection.swift in Sources */,
 				A08DDA392971CD79009C9031 /* APIEndpoints.swift in Sources */,
@@ -385,6 +402,7 @@
 				A08DDA352971CD52009C9031 /* APICaller.swift in Sources */,
 				A0CC3405297309BC0020CF0B /* SearchViewModel.swift in Sources */,
 				A0CC340A29730E290020CF0B /* SearchGameTableViewCell.swift in Sources */,
+				A022BA912977199500E950AC /* FavoriteTableViewCell.swift in Sources */,
 				A0CC33F72972D3920020CF0B /* Extensions.swift in Sources */,
 				A0CC3407297309C70020CF0B /* SearchModel.swift in Sources */,
 				A0DEF4D92975A9FE0036C3FF /* GameDetailModel.swift in Sources */,
@@ -392,6 +410,8 @@
 				A08DDA1F2971CB65009C9031 /* GraduationProject.xcdatamodeld in Sources */,
 				A08DDA482971E3A6009C9031 /* PopularTableViewCell.swift in Sources */,
 				A08DDA3D2971CD96009C9031 /* GameDetail.swift in Sources */,
+				A022BA8E29770C2200E950AC /* FavoriteViewModel.swift in Sources */,
+				A00B7A5429770194003F9760 /* CoreDataManager.swift in Sources */,
 				A08DDA3B2971CD90009C9031 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

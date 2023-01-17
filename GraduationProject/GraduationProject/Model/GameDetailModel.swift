@@ -26,6 +26,7 @@ class GameDetailModel{
             }
         }
     }
+
     
 }
 
