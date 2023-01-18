@@ -18,9 +18,6 @@ class FavoritesViewController: UIViewController {
         setupBindings()
         viewModel.didViewLoad()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        viewModel.didViewLoad()
-    }
     
     private func setupUI(){
         activityIndicator.startAnimating()
@@ -35,6 +32,11 @@ class FavoritesViewController: UIViewController {
         
         //MARK: Register cell
         tableView.register(UINib(nibName: "FavoriteTableViewCell", bundle: nil), forCellReuseIdentifier: "favoriteCell")
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("favoriteUpdate"), object: nil, queue: nil) { _ in
+            self.viewModel.didViewLoad()
+            self.tableView.reloadData()
+        }
     }
     
 
@@ -55,6 +57,10 @@ extension FavoritesViewController: UITableViewDataSource{
 }
 
 extension FavoritesViewController: UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Sil"
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let vc =  storyboard?.instantiateViewController(withIdentifier: "gameDetailViewController") as? GameDetailViewController{
@@ -63,6 +69,7 @@ extension FavoritesViewController: UITableViewDelegate{
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -74,6 +81,7 @@ extension FavoritesViewController: UITableViewDelegate{
             self.tableView.endUpdates()
         }
     }
+    
 }
 
 extension FavoritesViewController {

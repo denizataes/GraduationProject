@@ -7,5 +7,9 @@ target 'GraduationProject' do
 
   # Pods for GraduationProject
   pod 'Kingfisher', '~> 7.5'
+  pod 'IQKeyboardManagerSwift'
+
+
+
 
 end

@@ -60,19 +60,23 @@ class GameDetailViewController: UIViewController {
     }
     @IBAction func favoriteBtnClicked(_ sender: UIButton) {
         if favoriteButton.image(for: .normal) == UIImage(systemName: "heart") {
-            viewModel.saveFavorite(vm: .init(gameID: id, backgroundImage: imageURL , name: gameTitleLabel.text ?? "", createdDate: getDate()))
+            viewModel.saveFavorite(vm: .init(gameID: id, backgroundImage: imageURL , name: gameTitleLabel.text ?? "", createdDate: Utils.shared.getDate()))
         }
         else{
             viewModel.deleteFavorite(id: id)
         }
 
     }
-    private func getDate() -> String{
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "DD.MM.YY HH:mm"
-        return dateFormatter.string(from: date)
+    @IBAction func noteBtnClicked(_ sender: UIButton) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+         let destVC = storyboard.instantiateViewController(withIdentifier: "addNoteViewController") as! AddNoteViewController
+        destVC.id = id
+        destVC.backgroundImage = imageURL
+        destVC.gameName = gameTitleLabel.text ?? ""
+
+         self.present(destVC, animated: true, completion: nil)
     }
+   
 }
 
 //MARK: TableView Datasources and Delegates
@@ -122,12 +126,14 @@ extension GameDetailViewController{
         viewModel.didFavoriteSaved = { [weak self] in
             DispatchQueue.main.async {
                 self?.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                NotificationCenter.default.post(name: NSNotification.Name("favoriteUpdate"), object: nil)
             }
         }
         
         viewModel.didFavoriteDelete = { [weak self] in
             DispatchQueue.main.async {
                 self?.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                NotificationCenter.default.post(name: NSNotification.Name("favoriteUpdate"), object: nil)
             }
         }
         

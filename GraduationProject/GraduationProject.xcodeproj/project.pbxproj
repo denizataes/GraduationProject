@@ -13,6 +13,9 @@
 		A022BA8E29770C2200E950AC /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022BA8D29770C2200E950AC /* FavoriteViewModel.swift */; };
 		A022BA912977199500E950AC /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022BA8F2977199500E950AC /* FavoriteTableViewCell.swift */; };
 		A022BA922977199500E950AC /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A022BA902977199500E950AC /* FavoriteTableViewCell.xib */; };
+		A022BA9429774AC800E950AC /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022BA9329774AC800E950AC /* NotesViewController.swift */; };
+		A022BA9629774B1500E950AC /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022BA9529774B1500E950AC /* AddNoteViewController.swift */; };
+		A022BA982977576300E950AC /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022BA972977576300E950AC /* AddNoteViewModel.swift */; };
 		A08DDA152971CB65009C9031 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DDA142971CB65009C9031 /* AppDelegate.swift */; };
 		A08DDA172971CB65009C9031 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DDA162971CB65009C9031 /* SceneDelegate.swift */; };
 		A08DDA192971CB65009C9031 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DDA182971CB65009C9031 /* HomeViewController.swift */; };
@@ -40,6 +43,9 @@
 		A0CC3407297309C70020CF0B /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC3406297309C70020CF0B /* SearchModel.swift */; };
 		A0CC340A29730E290020CF0B /* SearchGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC340829730E290020CF0B /* SearchGameTableViewCell.swift */; };
 		A0CC340B29730E290020CF0B /* SearchGameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0CC340929730E290020CF0B /* SearchGameTableViewCell.xib */; };
+		A0DDC7EE29787550003D4150 /* NoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DDC7ED29787550003D4150 /* NoteCollectionViewCell.swift */; };
+		A0DDC7F029787740003D4150 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DDC7EF29787740003D4150 /* NoteViewModel.swift */; };
+		A0DDC7F2297893A1003D4150 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DDC7F1297893A1003D4150 /* PinterestLayout.swift */; };
 		A0DEF4D72975A9F00036C3FF /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DEF4D62975A9F00036C3FF /* GameDetailViewModel.swift */; };
 		A0DEF4D92975A9FE0036C3FF /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DEF4D82975A9FE0036C3FF /* GameDetailModel.swift */; };
 		A0DEF4E02975E3D30036C3FF /* GameDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DEF4DE2975E3D30036C3FF /* GameDetailTableViewCell.swift */; };
@@ -54,6 +60,9 @@
 		A022BA8D29770C2200E950AC /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		A022BA8F2977199500E950AC /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		A022BA902977199500E950AC /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteTableViewCell.xib; sourceTree = "<group>"; };
+		A022BA9329774AC800E950AC /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		A022BA9529774B1500E950AC /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		A022BA972977576300E950AC /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
 		A08DDA112971CB65009C9031 /* GraduationProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraduationProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08DDA142971CB65009C9031 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A08DDA162971CB65009C9031 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +92,9 @@
 		A0CC3406297309C70020CF0B /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		A0CC340829730E290020CF0B /* SearchGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGameTableViewCell.swift; sourceTree = "<group>"; };
 		A0CC340929730E290020CF0B /* SearchGameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchGameTableViewCell.xib; sourceTree = "<group>"; };
+		A0DDC7ED29787550003D4150 /* NoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewCell.swift; sourceTree = "<group>"; };
+		A0DDC7EF29787740003D4150 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		A0DDC7F1297893A1003D4150 /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		A0DEF4D62975A9F00036C3FF /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
 		A0DEF4D82975A9FE0036C3FF /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
 		A0DEF4DE2975E3D30036C3FF /* GameDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -206,10 +218,12 @@
 		A08DDA2F2971CCA8009C9031 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A0DEF4DF2975E3D30036C3FF /* GameDetailTableViewCell.xib */,
 				A0CC33F62972D3920020CF0B /* Extensions.swift */,
 				A0CC33FC2972EFC90020CF0B /* Utils.swift */,
 				A0CC33FE297307DF0020CF0B /* SearchSection.swift */,
 				A00B7A5329770194003F9760 /* CoreDataManager.swift */,
+				A0DDC7F1297893A1003D4150 /* PinterestLayout.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -221,6 +235,8 @@
 				A08DDA422971D3E3009C9031 /* SearchViewController.swift */,
 				A0F33D4C2974980A0041D204 /* GameDetailViewController.swift */,
 				A00B7A5129770013003F9760 /* FavoritesViewController.swift */,
+				A022BA9329774AC800E950AC /* NotesViewController.swift */,
+				A022BA9529774B1500E950AC /* AddNoteViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,9 +252,9 @@
 				A0CC340829730E290020CF0B /* SearchGameTableViewCell.swift */,
 				A0CC340929730E290020CF0B /* SearchGameTableViewCell.xib */,
 				A0DEF4DE2975E3D30036C3FF /* GameDetailTableViewCell.swift */,
-				A0DEF4DF2975E3D30036C3FF /* GameDetailTableViewCell.xib */,
 				A022BA8F2977199500E950AC /* FavoriteTableViewCell.swift */,
 				A022BA902977199500E950AC /* FavoriteTableViewCell.xib */,
+				A0DDC7ED29787550003D4150 /* NoteCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,6 +276,8 @@
 				A0CC3404297309BC0020CF0B /* SearchViewModel.swift */,
 				A0DEF4D62975A9F00036C3FF /* GameDetailViewModel.swift */,
 				A022BA8D29770C2200E950AC /* FavoriteViewModel.swift */,
+				A022BA972977576300E950AC /* AddNoteViewModel.swift */,
+				A0DDC7EF29787740003D4150 /* NoteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -383,10 +401,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0DDC7F029787740003D4150 /* NoteViewModel.swift in Sources */,
 				A08DDA3F2971CD9D009C9031 /* Platform.swift in Sources */,
 				A00B7A5229770013003F9760 /* FavoritesViewController.swift in Sources */,
 				A08DDA192971CB65009C9031 /* HomeViewController.swift in Sources */,
 				A0CC33FF297307DF0020CF0B /* SearchSection.swift in Sources */,
+				A022BA9429774AC800E950AC /* NotesViewController.swift in Sources */,
 				A08DDA392971CD79009C9031 /* APIEndpoints.swift in Sources */,
 				A0CC33F92972D7340020CF0B /* HomeViewModel.swift in Sources */,
 				A08DDA412971CDA3009C9031 /* Genre.swift in Sources */,
@@ -402,7 +422,10 @@
 				A08DDA352971CD52009C9031 /* APICaller.swift in Sources */,
 				A0CC3405297309BC0020CF0B /* SearchViewModel.swift in Sources */,
 				A0CC340A29730E290020CF0B /* SearchGameTableViewCell.swift in Sources */,
+				A022BA9629774B1500E950AC /* AddNoteViewController.swift in Sources */,
+				A022BA982977576300E950AC /* AddNoteViewModel.swift in Sources */,
 				A022BA912977199500E950AC /* FavoriteTableViewCell.swift in Sources */,
+				A0DDC7F2297893A1003D4150 /* PinterestLayout.swift in Sources */,
 				A0CC33F72972D3920020CF0B /* Extensions.swift in Sources */,
 				A0CC3407297309C70020CF0B /* SearchModel.swift in Sources */,
 				A0DEF4D92975A9FE0036C3FF /* GameDetailModel.swift in Sources */,
@@ -412,6 +435,7 @@
 				A08DDA3D2971CD96009C9031 /* GameDetail.swift in Sources */,
 				A022BA8E29770C2200E950AC /* FavoriteViewModel.swift in Sources */,
 				A00B7A5429770194003F9760 /* CoreDataManager.swift in Sources */,
+				A0DDC7EE29787550003D4150 /* NoteCollectionViewCell.swift in Sources */,
 				A08DDA3B2971CD90009C9031 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

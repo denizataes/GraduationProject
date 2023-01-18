@@ -28,11 +28,16 @@ class FavoriteTableViewCell: UITableViewCell {
     }
     private func setupUI(){
         gameImageView.kf.indicatorType = .activity
-        (gameImageView.kf.indicator?.view as? UIActivityIndicatorView)?.color = .purple
+        (gameImageView.kf.indicator?.view as? UIActivityIndicatorView)?.color = .systemRed
         gameImageView.layer.cornerRadius = 5
         gameImageView.layer.shadowRadius = 5
         gameTitleLabel.adjustsFontSizeToFitWidth = true
         gameTitleLabel.sizeToFit()
+        
+        
+        gameImageView.layer.shadowColor = UIColor.black.cgColor
+        gameImageView.layer.shadowOffset = CGSizeMake(0, 5)
+        gameImageView.layer.shadowOpacity = 1
     }
     
     func configure(with model: FavoriteCellModel) {

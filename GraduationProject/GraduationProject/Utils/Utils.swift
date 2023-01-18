@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Utils{
     static let shared = Utils()
@@ -20,6 +21,22 @@ class Utils{
         let monthAndYear = dateFormatter.string(from: date!)
         return monthAndYear
         
+    }
+    /// get formatted date
+    func getDate() -> String{
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "DD.MM.YY HH:mm"
+        return dateFormatter.string(from: date)
+    }
+    
+    func height(for text: String, with font: UIFont, width: CGFloat) -> CGFloat
+    {
+        let nsstring = NSString(string: text)
+        let maxHeight = CGFloat(MAXFLOAT)//alabileceği maximumum değer
+        let textAttributes = [NSAttributedString.Key.font : font]
+        let boundingRect = nsstring.boundingRect(with: CGSize(width: width, height: maxHeight), options: .usesLineFragmentOrigin, attributes: textAttributes, context: nil)
+        return ceil(boundingRect.height)
     }
 }
 
