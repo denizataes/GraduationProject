@@ -13,6 +13,9 @@ class NotesViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var viewModel = NoteViewModel()
     var noteList = [NoteVM]()
+    var filteredData = [NoteVM]()
+    let searchController = UISearchController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.startAnimating()
@@ -31,6 +34,7 @@ class NotesViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.topItem?.title = "Notlarım 📒"
         
+        navigationItem.searchController = searchController
         // MARK: CollectionView
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -39,25 +43,40 @@ class NotesViewController: UIViewController {
         if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
         }
+        
+        
+        //MARK: SearchController
+        searchController.loadViewIfNeeded()
+        //searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.enablesReturnKeyAutomatically = true
+        searchController.searchBar.returnKeyType = UIReturnKeyType.done
+        //searchController.searchBar.scopeButtonTitles = sections
+        searchController.searchBar.delegate = self
+        searchController.searchBar.setValue("İptal", forKey: "cancelButtonText")
+        searchController.searchBar.placeholder = "Not başlığına veya oyun adına göre..."
+    }
+}
+extension NotesViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredData = noteList
+
+        if searchText.isEmpty == false {
+            filteredData = noteList.filter({ $0.noteTitle.contains(searchText) || $0.gameName.contains(searchText) })
+        }
+
+        collectionView.reloadData()
     }
 }
 
 extension NotesViewController: UICollectionViewDelegateFlowLayout{
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-//    {
-//
-//        let collectionViewSize = collectionView.frame.size.width
-//        return CGSize(width: collectionViewSize/2.2, height: 200)
-//    }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//           return UIEdgeInsets(top: 8, left: 8, bottom: 0, right: 8)
-//        }
+
 }
 
 extension NotesViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return noteList.count
+        let searchBar = searchController.searchBar
+        return searchBar.text!.count > 0 ? filteredData.count : noteList.count
     }
     
     internal func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
@@ -77,7 +96,8 @@ extension NotesViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noteCell", for: indexPath) as! NoteCollectionViewCell
-        let model = noteList[indexPath.item]
+        let searchBar = searchController.searchBar
+        let model = searchBar.text!.count > 0 ? filteredData[indexPath.item] : noteList[indexPath.item]
         cell.configure(with: .init(gameTitle: model.gameName, imageBackground: model.imageBackground, createdDate: model.createdDate, noteTitle: model.noteTitle,noteDescription: model.noteDescription))
         return cell
     }

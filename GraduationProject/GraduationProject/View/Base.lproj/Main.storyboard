@@ -728,7 +728,7 @@
                                     <constraint firstAttribute="height" constant="34" id="wPj-BZ-Gq7"/>
                                 </constraints>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qf9-no-M71">

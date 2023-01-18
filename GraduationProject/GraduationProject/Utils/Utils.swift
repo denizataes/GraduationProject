@@ -13,7 +13,7 @@ class Utils{
     
     ///Convert string to datetime.
     func convertDate(dateString: String?) -> String{
-        guard dateString != "" else {return ""}
+        guard dateString != nil, dateString != "" else {return ""}
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-mm-DD"
         let date = dateFormatter.date(from: dateString!)
