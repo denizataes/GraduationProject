@@ -174,12 +174,10 @@
 		A08DDA132971CB65009C9031 /* GraduationProject */ = {
 			isa = PBXGroup;
 			children = (
-				A08DDA332971CD02009C9031 /* ViewModel */,
-				A08DDA322971CCD0009C9031 /* Model */,
+				A09D38EF2979F0E000C1A8EF /* Modules */,
+				A0DDC8022979EE25003D4150 /* Manager */,
 				A08DDA312971CCCC009C9031 /* View */,
-				A08DDA302971CCB0009C9031 /* Controller */,
 				A08DDA2F2971CCA8009C9031 /* Utils */,
-				A08DDA2E2971CC9E009C9031 /* Extensions */,
 				A08DDA2D2971CC98009C9031 /* API */,
 				A08DDA2C2971CC90009C9031 /* Resource */,
 				A08DDA2B2971CC8B009C9031 /* App */,
@@ -216,38 +214,15 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		A08DDA2E2971CC9E009C9031 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		A08DDA2F2971CCA8009C9031 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				A0DEF4DF2975E3D30036C3FF /* GameDetailTableViewCell.xib */,
 				A0CC33F62972D3920020CF0B /* Extensions.swift */,
 				A0CC33FE297307DF0020CF0B /* SearchSection.swift */,
 				A0CC33FC2972EFC90020CF0B /* Utils.swift */,
-				A00B7A5329770194003F9760 /* CoreDataManager.swift */,
 				A0DDC7F1297893A1003D4150 /* PinterestLayout.swift */,
-				A0DDC7F3297953C8003D4150 /* LocalNotificationManager.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		A08DDA302971CCB0009C9031 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				A08DDA182971CB65009C9031 /* HomeViewController.swift */,
-				A08DDA422971D3E3009C9031 /* SearchViewController.swift */,
-				A0F33D4C2974980A0041D204 /* GameDetailViewController.swift */,
-				A00B7A5129770013003F9760 /* FavoritesViewController.swift */,
-				A022BA9329774AC800E950AC /* NotesViewController.swift */,
-				A022BA9529774B1500E950AC /* AddNoteViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		A08DDA312971CCCC009C9031 /* View */ = {
@@ -255,40 +230,257 @@
 			children = (
 				A08DDA1A2971CB65009C9031 /* Main.storyboard */,
 				A08DDA222971CB66009C9031 /* LaunchScreen.storyboard */,
-				A08DDA442971D902009C9031 /* LatestCollectionViewCell.swift */,
-				A08DDA462971E3A6009C9031 /* PopularTableViewCell.swift */,
-				A08DDA472971E3A6009C9031 /* PopularTableViewCell.xib */,
-				A0CC340829730E290020CF0B /* SearchGameTableViewCell.swift */,
-				A0CC340929730E290020CF0B /* SearchGameTableViewCell.xib */,
-				A0DEF4DE2975E3D30036C3FF /* GameDetailTableViewCell.swift */,
-				A022BA8F2977199500E950AC /* FavoriteTableViewCell.swift */,
-				A022BA902977199500E950AC /* FavoriteTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A09D38EF2979F0E000C1A8EF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A09D38FC2979F17800C1A8EF /* AddNote */,
+				A09D38FA2979F14100C1A8EF /* GameDetail */,
+				A09D38F32979F0F500C1A8EF /* Note */,
+				A09D38F22979F0EF00C1A8EF /* Favorite */,
+				A09D38F12979F0E900C1A8EF /* Search */,
+				A09D38F02979F0E600C1A8EF /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A09D38F02979F0E600C1A8EF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A09D39072979F26800C1A8EF /* View */,
+				A09D39042979F1FD00C1A8EF /* Model */,
+				A09D39032979F1E400C1A8EF /* ViewModel */,
+				A09D38F92979F11F00C1A8EF /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A09D38F12979F0E900C1A8EF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A09D39082979F28800C1A8EF /* View */,
+				A09D39052979F20900C1A8EF /* Model */,
+				A09D39022979F1D700C1A8EF /* ViewModel */,
+				A09D38F82979F11B00C1A8EF /* Controller */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A09D38F22979F0EF00C1A8EF /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				A09D39092979F29300C1A8EF /* View */,
+				A09D39012979F1CC00C1A8EF /* ViewModel */,
+				A09D38F72979F11800C1A8EF /* Controller */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		A09D38F32979F0F500C1A8EF /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				A09D38F62979F10100C1A8EF /* Controller */,
+				A09D38F52979F0FC00C1A8EF /* ViewModel */,
+				A09D38F42979F0F900C1A8EF /* View */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		A09D38F42979F0F900C1A8EF /* View */ = {
+			isa = PBXGroup;
+			children = (
 				A0DDC7ED29787550003D4150 /* NoteCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		A08DDA322971CCD0009C9031 /* Model */ = {
+		A09D38F52979F0FC00C1A8EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A0DDC7EF29787740003D4150 /* NoteViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A09D38F62979F10100C1A8EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A022BA9329774AC800E950AC /* NotesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A09D38F72979F11800C1A8EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A00B7A5129770013003F9760 /* FavoritesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A09D38F82979F11B00C1A8EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A08DDA422971D3E3009C9031 /* SearchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A09D38F92979F11F00C1A8EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A08DDA182971CB65009C9031 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A09D38FA2979F14100C1A8EF /* GameDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A09D390A2979F2AD00C1A8EF /* View */,
+				A09D39062979F21700C1A8EF /* Model */,
+				A09D38FF2979F1A500C1A8EF /* ViewModel */,
+				A09D38FB2979F14E00C1A8EF /* Controller */,
+			);
+			path = GameDetail;
+			sourceTree = "<group>";
+		};
+		A09D38FB2979F14E00C1A8EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A0F33D4C2974980A0041D204 /* GameDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A09D38FC2979F17800C1A8EF /* AddNote */ = {
+			isa = PBXGroup;
+			children = (
+				A09D38FE2979F19400C1A8EF /* ViewModel */,
+				A09D38FD2979F17C00C1A8EF /* Controller */,
+			);
+			path = AddNote;
+			sourceTree = "<group>";
+		};
+		A09D38FD2979F17C00C1A8EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A022BA9529774B1500E950AC /* AddNoteViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A09D38FE2979F19400C1A8EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A022BA972977576300E950AC /* AddNoteViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A09D38FF2979F1A500C1A8EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A0DEF4D62975A9F00036C3FF /* GameDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A09D39012979F1CC00C1A8EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A022BA8D29770C2200E950AC /* FavoriteViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A09D39022979F1D700C1A8EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A0CC3404297309BC0020CF0B /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A09D39032979F1E400C1A8EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A0CC33F82972D7340020CF0B /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A09D39042979F1FD00C1A8EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A0CC33FA2972D7C00020CF0B /* HomeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A09D39052979F20900C1A8EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				A0CC3406297309C70020CF0B /* SearchModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A09D39062979F21700C1A8EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				A0DEF4D82975A9FE0036C3FF /* GameDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A08DDA332971CD02009C9031 /* ViewModel */ = {
+		A09D39072979F26800C1A8EF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A0CC33F82972D7340020CF0B /* HomeViewModel.swift */,
-				A0CC3404297309BC0020CF0B /* SearchViewModel.swift */,
-				A0DEF4D62975A9F00036C3FF /* GameDetailViewModel.swift */,
-				A022BA8D29770C2200E950AC /* FavoriteViewModel.swift */,
-				A022BA972977576300E950AC /* AddNoteViewModel.swift */,
-				A0DDC7EF29787740003D4150 /* NoteViewModel.swift */,
+				A08DDA442971D902009C9031 /* LatestCollectionViewCell.swift */,
+				A08DDA462971E3A6009C9031 /* PopularTableViewCell.swift */,
+				A08DDA472971E3A6009C9031 /* PopularTableViewCell.xib */,
 			);
-			path = ViewModel;
+			path = View;
+			sourceTree = "<group>";
+		};
+		A09D39082979F28800C1A8EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0CC340829730E290020CF0B /* SearchGameTableViewCell.swift */,
+				A0CC340929730E290020CF0B /* SearchGameTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A09D39092979F29300C1A8EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A022BA8F2977199500E950AC /* FavoriteTableViewCell.swift */,
+				A022BA902977199500E950AC /* FavoriteTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A09D390A2979F2AD00C1A8EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0DEF4DE2975E3D30036C3FF /* GameDetailTableViewCell.swift */,
+				A0DEF4DF2975E3D30036C3FF /* GameDetailTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A0DDC8022979EE25003D4150 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A0DDC7F3297953C8003D4150 /* LocalNotificationManager.swift */,
+				A00B7A5329770194003F9760 /* CoreDataManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
