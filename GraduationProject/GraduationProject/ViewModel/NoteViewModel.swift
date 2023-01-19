@@ -6,7 +6,11 @@ class NoteViewModel {
   var onErrorDetected: ((String) -> ())?
   var noteList: (([NoteVM]) -> ())?
   var didNoteDeleted: (() -> ())?
+  weak var delegate: NotificationManagerProtocol?
 
+    init(){
+        delegate = LocalNotificationManager.shared
+    }
 
     func didViewLoad() {
         fetchNotes()
@@ -23,6 +27,10 @@ class NoteViewModel {
                 self?.onErrorDetected?("Favoriler yüklenirken hata oluştu! Lütfen daha sonra tekrar deneyin.")
             }
         }
+    }
+    
+    func showNotification(title: String, type: NotificationType){
+        delegate?.didNotificationShow(title: title, type: type)
     }
     
     func deleteNotes(id: UUID){

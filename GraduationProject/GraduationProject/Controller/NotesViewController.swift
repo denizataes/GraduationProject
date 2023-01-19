@@ -124,6 +124,7 @@ extension NotesViewController{
         }
         
         viewModel.didNoteDeleted = {[weak self] in
+            self?.viewModel.showNotification(title:"" ,type: NotificationType.noteDelete)
             NotificationCenter.default.post(name: NSNotification.Name("noteUpdate"), object: nil)
         }
     }

@@ -12,13 +12,12 @@ import IQKeyboardManagerSwift
 class AddNoteViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var noteDescription: IQTextView!
-    
-    
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
     var viewModel = AddNoteViewModel()
+    var gameViewModel = GameDetailViewModel()
+    
     var id: String = ""
     var gameName: String = ""
     var backgroundImage: String = ""
@@ -71,9 +70,10 @@ class AddNoteViewController: UIViewController {
 //MARK: Bindings
 extension AddNoteViewController{
     func setupBindings() {
-        viewModel.didNoteSave = {
+        viewModel.didNoteSave = { [weak self] in
+            self?.gameViewModel.showNotification(title: self?.nameLabel.text ?? "", type: NotificationType.noteAdd)
             NotificationCenter.default.post(name: NSNotification.Name("noteUpdate"), object: nil)
-            self.dismiss(animated: true)
+            self?.dismiss(animated: true)
         }
     }
 }

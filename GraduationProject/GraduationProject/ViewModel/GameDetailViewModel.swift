@@ -7,8 +7,14 @@
 
 import Foundation
 import CoreData
+
+protocol NotificationManagerProtocol: AnyObject {
+    func didNotificationShow(title: String, type: NotificationType)
+}
+
 class GameDetailViewModel{
     private let model = GameDetailModel()
+    weak var delegate: NotificationManagerProtocol?
     
     var didFavorited: ((Bool) -> ())?
     var onErrorDetected: ((String) -> ())?
@@ -22,6 +28,8 @@ class GameDetailViewModel{
     
     init(){
         model.delegate = self
+        delegate = LocalNotificationManager.shared
+
     }
     
     func didViewLoad(id: String) {
@@ -69,8 +77,10 @@ class GameDetailViewModel{
         }
     }
     
-    
-    
+    func showNotification(title: String, type: NotificationType){
+        delegate?.didNotificationShow(title: title, type: type)
+    }
+
     func isFavorited(with gameID: String){
         CoreDataManager.shared.fetch(objectType: Favorites.self,
                                      predicate: .init(format: "gameID==\(gameID)")){[weak self] res in

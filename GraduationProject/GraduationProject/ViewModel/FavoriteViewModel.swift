@@ -5,6 +5,13 @@ class FavoriteViewModel {
 
   var onErrorDetected: ((String) -> ())?
   var favoriteList: (([FavoriteVM]) -> ())?
+    
+  weak var delegate: NotificationManagerProtocol?
+    
+  init(){
+    delegate = LocalNotificationManager.shared
+  }
+
   
   func didViewLoad() {
       fetchFavorites()
@@ -33,7 +40,7 @@ class FavoriteViewModel {
                     CoreDataManager.shared.delete(object: favorite) { response in
                         switch(response){
                         case .success():
-                            print("Deleted")
+                            self?.showNotification(title: "", type: NotificationType.favoriteDelete)
                         case .failure(_):
                             self?.onErrorDetected?("Favori silinirken hata oluştu! Lütfen daha sonra tekrar deneyin.")
                         }
@@ -44,4 +51,9 @@ class FavoriteViewModel {
             }
         }
     }
+    
+    func showNotification(title: String, type: NotificationType){
+        delegate?.didNotificationShow(title: title, type: type)
+    }
+    
 }

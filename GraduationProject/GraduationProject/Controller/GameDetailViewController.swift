@@ -61,9 +61,11 @@ class GameDetailViewController: UIViewController {
     @IBAction func favoriteBtnClicked(_ sender: UIButton) {
         if favoriteButton.image(for: .normal) == UIImage(systemName: "heart") {
             viewModel.saveFavorite(vm: .init(gameID: id, backgroundImage: imageURL , name: gameTitleLabel.text ?? "", createdDate: Utils.shared.getDate()))
+            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }
         else{
             viewModel.deleteFavorite(id: id)
+            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
 
     }
@@ -125,6 +127,7 @@ extension GameDetailViewController{
         
         viewModel.didFavoriteSaved = { [weak self] in
             DispatchQueue.main.async {
+                self?.viewModel.showNotification(title: self?.gameTitleLabel.text ?? "", type: NotificationType.favoriteAdd)
                 self?.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
                 NotificationCenter.default.post(name: NSNotification.Name("favoriteUpdate"), object: nil)
             }

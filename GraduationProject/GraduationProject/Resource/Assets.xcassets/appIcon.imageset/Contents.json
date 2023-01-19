@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "icon0.png.jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "output-onlinepngtools-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

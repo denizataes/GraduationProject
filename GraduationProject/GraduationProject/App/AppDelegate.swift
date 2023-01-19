@@ -8,9 +8,10 @@
 import UIKit
 import CoreData
 import IQKeyboardManagerSwift
+import UserNotifications
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
 
 
@@ -18,9 +19,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "İLERİ"
         IQKeyboardManager.shared.toolbarTintColor = .systemPurple
+        UNUserNotificationCenter.current().delegate = self
+
+        let notificationCenter = UNUserNotificationCenter.current()
+        
+        notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (success, error) in
+                if success {
+                    print("Yay!")
+                } else {
+                    print("D'oh")
+                }
+            }
         
         // Override point for customization after application launch.
         return true
+    }
+    
+
+    @objc(userNotificationCenter:willPresentNotification:withCompletionHandler:) func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
     }
 
     // MARK: UISceneSession Lifecycle

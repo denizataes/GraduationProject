@@ -756,7 +756,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game" translatesAutoresizingMaskIntoConstraints="NO" id="PS2-mD-q9T">
-                                <rect key="frame" x="111" y="125" width="171" height="185.00000000000003"/>
+                                <rect key="frame" x="111" y="125" width="171" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="JAh-Sz-WoZ"/>
                                     <constraint firstAttribute="width" constant="171" id="T2j-MM-b5Z"/>
