@@ -32,8 +32,8 @@ class NotesViewController: UIViewController {
         
         // MARK: NavigationController
         navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.topItem?.title = "Notlarım 📒"
-        
+        navigationController?.navigationBar.topItem?.title = "\("Notlarım".localized()) 📒"
+        navigationController?.navigationBar.tintColor = UIColor.purple
         navigationItem.searchController = searchController
         // MARK: CollectionView
         collectionView.delegate = self
@@ -53,8 +53,8 @@ class NotesViewController: UIViewController {
         searchController.searchBar.returnKeyType = UIReturnKeyType.done
         //searchController.searchBar.scopeButtonTitles = sections
         searchController.searchBar.delegate = self
-        searchController.searchBar.setValue("İptal", forKey: "cancelButtonText")
-        searchController.searchBar.placeholder = "Not başlığına veya oyun adına göre..."
+        searchController.searchBar.setValue("İptal".localized(), forKey: "cancelButtonText")
+        searchController.searchBar.placeholder = "Not başlığına veya oyun adına göre...".localized()
     }
 }
 extension NotesViewController: UISearchBarDelegate{
@@ -84,7 +84,7 @@ extension NotesViewController: UICollectionViewDataSource{
         let config = UIContextMenuConfiguration(
             identifier: nil,
             previewProvider: nil) {[weak self] _ in
-                let downloadAction = UIAction(title: "Sil", subtitle: nil, state: .off) { _ in
+                let downloadAction = UIAction(title: "Sil".localized(), subtitle: nil, state: .off) { _ in
                     let model = self?.noteList[indexPath.item]
                     guard ((model?.id) != nil) else {return}
                     self?.viewModel.deleteNotes(id: model!.id)
@@ -108,8 +108,8 @@ extension NotesViewController{
         viewModel.onErrorDetected = { [weak self] messages in
             DispatchQueue.main.async {
                 self?.activityIndicator.stopAnimating()
-                let alertController = UIAlertController(title: "Alert", message: messages, preferredStyle: .alert)
-                alertController.addAction(.init(title: "Ok", style: .default))
+                let alertController = UIAlertController(title: "Uyarı".localized(), message: messages, preferredStyle: .alert)
+                alertController.addAction(.init(title: "Tamam".localized(), style: .default))
                 self?.present(alertController, animated: true, completion: nil)
             }
         }

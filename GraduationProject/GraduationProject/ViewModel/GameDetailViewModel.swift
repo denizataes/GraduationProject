@@ -93,7 +93,7 @@ class GameDetailViewModel{
                     self?.didFavorited?(false)
                 }
             case .failure(_):
-                self?.onErrorDetected?("Hata oluştu, lütfen daha sonra tekrar deneyiniz!")
+                self?.onErrorDetected?("Hata oluştu, lütfen daha sonra tekrar deneyiniz!".localized())
             }
             
         }
@@ -153,7 +153,7 @@ extension GameDetailViewModel: GameDetailProtocol{
     }
     
     func didDataCouldntFetch() {
-        onErrorDetected?("Hata oluştu, lütfen daha sonra tekrar deneyiniz!")
+        onErrorDetected?("Hata oluştu, lütfen daha sonra tekrar deneyiniz!".localized())
     }
 }
 

@@ -42,7 +42,7 @@ class PopularTableViewCell: UITableViewCell {
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.sizeToFit()
         titleLabel.text = model.title
-        durationLabel.text = "\(model.duration) Saat"
+        durationLabel.text = "\(model.duration) \("Saat".localized())"
         releaseDateLabel.text = Utils.shared.convertDate(dateString: model.releaseDate)
     }
     

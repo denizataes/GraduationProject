@@ -24,7 +24,7 @@ class FavoritesViewController: UIViewController {
         
         // MARK: NavigationController
         navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.topItem?.title = "Favorilerim ❤️"
+        navigationController?.navigationBar.topItem?.title = "\("Favorilerim".localized()) ❤️"
         
         //MARK: Tableview
         self.tableView.delegate = self
@@ -59,7 +59,7 @@ extension FavoritesViewController: UITableViewDataSource{
 extension FavoritesViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-        return "Sil"
+        return "Sil".localized()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -89,8 +89,8 @@ extension FavoritesViewController {
         viewModel.onErrorDetected = { [weak self] messages in
             DispatchQueue.main.async {
                 self?.activityIndicator.stopAnimating()
-                let alertController = UIAlertController(title: "Alert", message: messages, preferredStyle: .alert)
-                alertController.addAction(.init(title: "Ok", style: .default))
+                let alertController = UIAlertController(title: "Uyarı".localized(), message: messages, preferredStyle: .alert)
+                alertController.addAction(.init(title: "Tamam".localized(), style: .default))
                 self?.present(alertController, animated: true, completion: nil)
             }
         }

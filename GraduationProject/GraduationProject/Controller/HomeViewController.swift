@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     private func configureNavBar() {
         
         //collectionView!.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        navigationController?.navigationBar.topItem?.title = "Ana Sayfa🔥"
+        navigationController?.navigationBar.topItem?.title = "\("Ana Sayfa".localized())🔥"
     }
     
     private func configureDelegate() {
@@ -119,8 +119,8 @@ private extension HomeViewController {
           DispatchQueue.main.async {
               self?.collectionViewActivityIndicator.stopAnimating()
               self?.tableViewActivityIndicator.stopAnimating()
-              let alertController = UIAlertController(title: "Alert", message: messages, preferredStyle: .alert)
-              alertController.addAction(.init(title: "Ok", style: .default))
+              let alertController = UIAlertController(title: "Uyarı".localized(), message: messages, preferredStyle: .alert)
+              alertController.addAction(.init(title: "Tamam".localized(), style: .default))
               self?.present(alertController, animated: true, completion: nil)
           }
       }

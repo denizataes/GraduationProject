@@ -24,7 +24,7 @@ class NoteViewModel {
                 }
                 self?.noteList?(noteList)
             case .failure(_):
-                self?.onErrorDetected?("Favoriler yüklenirken hata oluştu! Lütfen daha sonra tekrar deneyin.")
+                self?.onErrorDetected?("Notlar yüklenirken hata oluştu! Lütfen daha sonra tekrar deneyin.".localized())
             }
         }
     }
@@ -44,11 +44,11 @@ class NoteViewModel {
                         case .success():
                             self?.didNoteDeleted?()
                         case .failure(_):
-                            self?.onErrorDetected?("Not silinirken hata oluştu! Lütfen daha sonra tekrar deneyin.")
+                            self?.onErrorDetected?("Not silinirken hata oluştu! Lütfen daha sonra tekrar deneyin.".localized())
                         }
                     }
                 case .failure(_):
-                    self?.onErrorDetected?("Favori silinirken hata oluştu! Lütfen daha sonra tekrar deneyin.")
+                    self?.onErrorDetected?("Not silinirken hata oluştu! Lütfen daha sonra tekrar deneyin.".localized())
                 }
             }
         }

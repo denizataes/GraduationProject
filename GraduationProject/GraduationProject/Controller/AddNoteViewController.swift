@@ -47,14 +47,14 @@ class AddNoteViewController: UIViewController {
     private func onSaveNotes() -> Bool{
         var result: Bool = true
         if noteTitle.text == "" {
-            let alertController = UIAlertController(title: "Uyarı ⚠️", message: "Not başlığı boş bırakılamaz!", preferredStyle: .alert)
-            alertController.addAction(.init(title: "Tamam", style: .default))
+            let alertController = UIAlertController(title: "\("Uyarı".localized()) ⚠️", message: "Not başlığı boş bırakılamaz!".localized(), preferredStyle: .alert)
+            alertController.addAction(.init(title: NSLocalizedString("Tamam", comment: ""), style: .default))
             self.present(alertController, animated: true, completion: nil)
             result = false
         }
         else if noteDescription.text == ""{
-            let alertController = UIAlertController(title: "Uyarı ⚠️", message: "Not açıklaması boş bırakılamaz!", preferredStyle: .alert)
-            alertController.addAction(.init(title: "Tamam", style: .default))
+            let alertController = UIAlertController(title: "\("Uyarı".localized()) ⚠️", message: "Not açıklaması boş bırakılamaz!".localized(), preferredStyle: .alert)
+            alertController.addAction(.init(title: "Tamam".localized(), style: .default))
             self.present(alertController, animated: true, completion: nil)
             result = false
         }

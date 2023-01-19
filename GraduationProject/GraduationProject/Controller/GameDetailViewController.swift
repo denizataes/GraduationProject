@@ -44,8 +44,6 @@ class GameDetailViewController: UIViewController {
         platformTableView.delegate = self
         
         //MARK: View Setup
-//        descriptionLabel.adjustsFontSizeToFitWidth = true
-//        descriptionLabel.sizeToFit()
         gameImageView.kf.indicatorType = .activity
         (gameImageView.kf.indicator?.view as? UIActivityIndicatorView)?.color = .purple
         gameImageView.layer.cornerRadius = 8
@@ -118,8 +116,8 @@ extension GameDetailViewController{
     func setupBindings() {
         viewModel.onErrorDetected = { [weak self] messages in
             DispatchQueue.main.async {
-                let alertController = UIAlertController(title: "Alert", message: messages, preferredStyle: .alert)
-                alertController.addAction(.init(title: "Ok", style: .default))
+                let alertController = UIAlertController(title: "Uyarı".localized(), message: messages, preferredStyle: .alert)
+                alertController.addAction(.init(title: "Tamam".localized(), style: .default))
                 self?.removeSpinner()
                 self?.present(alertController, animated: true, completion: nil)
             }
@@ -142,7 +140,7 @@ extension GameDetailViewController{
         
         viewModel.onErrorDeleteFavorite = { [weak self] in
             DispatchQueue.main.async {
-                let alertController = UIAlertController(title: "Alert", message: "Favori kaldırılırken  hata oluştu! Lütfen daha sonra tekrar deneyin.", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Alert", message: "Favori kaldırılırken  hata oluştu! Lütfen daha sonra tekrar deneyin.".localized(), preferredStyle: .alert)
                 alertController.addAction(.init(title: "Ok", style: .default))
                 self?.present(alertController, animated: true, completion: nil)
             }
@@ -150,7 +148,7 @@ extension GameDetailViewController{
         
         viewModel.onErrorFavorite = { [weak self] in
             DispatchQueue.main.async {
-                let alertController = UIAlertController(title: "Alert", message: "Favorilere eklenirken hata oluştu! Lütfen daha sonra tekrar deneyin.", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Alert", message: "Favorilere eklenirken hata oluştu! Lütfen daha sonra tekrar deneyin.".localized(), preferredStyle: .alert)
                 alertController.addAction(.init(title: "Ok", style: .default))
                 self?.present(alertController, animated: true, completion: nil)
             }
@@ -180,6 +178,7 @@ extension GameDetailViewController{
                 self?.releaseDateLabel.text = response.releaseDate
                 self?.descriptionLabel.text = response.description
                 self?.voteLabel.text = String(response.rating) + "/5"
+                self?.playTimeLabel.text = "\(response.playTime) \("Saat".localized())"
                 self?.mehLabel.text = String(response.meh) + "%"
                 self?.recommendedLabel.text = String(response.recommended) + "%"
                 self?.skipLabel.text = String(response.skip) + "%"

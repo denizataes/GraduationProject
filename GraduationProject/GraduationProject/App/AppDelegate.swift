@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "İLERİ"
+        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "İLERİ".localized()
         IQKeyboardManager.shared.toolbarTintColor = .systemPurple
         UNUserNotificationCenter.current().delegate = self
 
@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (success, error) in
                 if success {
-                    print("Yay!")
+                    print("OK!")
                 } else {
-                    print("D'oh")
+                    print("")
                 }
             }
         

@@ -1,0 +1,104 @@
+
+/* Class = "UILabel"; text = "Oyunlar"; ObjectID = "7pl-pW-7hc"; */
+"7pl-pW-7hc.text" = "Spiele";
+
+/* Class = "UILabel"; text = "👎🏻"; ObjectID = "AFR-6L-cSM"; */
+"AFR-6L-cSM.text" = "👎🏻";
+
+/* Class = "UILabel"; text = "Güzeldi ama..."; ObjectID = "DpY-W7-gWq"; */
+"DpY-W7-gWq.text" = "Es war schön, aber...";
+
+/* Class = "UITabBarItem"; title = "Ana Sayfa"; ObjectID = "EFT-Cp-6aM"; */
+"EFT-Cp-6aM.title" = "Startseite";
+
+/* Class = "UILabel"; text = "3.8/5"; ObjectID = "Ejp-ML-rVW"; */
+"Ejp-ML-rVW.text" = "3.8/5";
+
+/* Class = "UILabel"; text = "52 Saat"; ObjectID = "Hv3-Ku-det"; */
+"Hv3-Ku-det.text" = "52 Saat";
+
+/* Class = "UILabel"; text = "40%"; ObjectID = "Mnp-QR-3Mw"; */
+"Mnp-QR-3Mw.text" = "40%";
+
+/* Class = "UILabel"; text = "🤷🏼‍♂️"; ObjectID = "OPe-AR-srD"; */
+"OPe-AR-srD.text" = "🤷🏼‍♂️";
+
+/* Class = "UILabel"; text = "20%"; ObjectID = "OSY-tr-WFi"; */
+"OSY-tr-WFi.text" = "20%";
+
+/* Class = "UILabel"; text = "Oyunlar"; ObjectID = "PfS-Y3-Eif"; */
+"PfS-Y3-Eif.text" = "Spiele";
+
+/* Class = "UILabel"; text = "18 Kasım 2022"; ObjectID = "Vkf-nU-RtG"; */
+"Vkf-nU-RtG.text" = "18 Kasım 2022";
+
+/* Class = "UILabel"; text = "BAŞLIK 🔥"; ObjectID = "XBC-p8-ihY"; */
+"XBC-p8-ihY.text" = "TITEL 🔥";
+
+/* Class = "UILabel"; text = "4.8/5"; ObjectID = "Y34-wY-zwH"; */
+"Y34-wY-zwH.text" = "4.8/5";
+
+/* Class = "UILabel"; text = "Güzeldi ama..."; ObjectID = "Yeb-yT-Vpo"; */
+"Yeb-yT-Vpo.text" = "Güzeldi ama...";
+
+/* Class = "UILabel"; text = "10%"; ObjectID = "aMf-C1-OjU"; */
+"aMf-C1-OjU.text" = "10%";
+
+/* Class = "UILabel"; text = "En Son Çıkan"; ObjectID = "bbU-ua-R3B"; */
+"bbU-ua-R3B.text" = "Zuletzt veröffentlicht";
+
+/* Class = "UILabel"; text = "👍🏻"; ObjectID = "cov-Vf-8GA"; */
+"cov-Vf-8GA.text" = "👍🏻";
+
+/* Class = "UILabel"; text = "Popüler"; ObjectID = "ct4-EZ-wbc"; */
+"ct4-EZ-wbc.text" = "Beliebt";
+
+/* Class = "UILabel"; text = "17.01.2023 09:23"; ObjectID = "dJK-CI-Ohq"; */
+"dJK-CI-Ohq.text" = "17.01.2023 09:23";
+
+/* Class = "UILabel"; text = "AÇIKLAMA 🤔"; ObjectID = "eW5-on-une"; */
+"eW5-on-une.text" = "ERLÄUTERUNG 🤔";
+
+/* Class = "UILabel"; text = "RED DEAD REDEMPTION 2"; ObjectID = "gHu-JS-42V"; */
+"gHu-JS-42V.text" = "RED DEAD REDEMPTION 2";
+
+/* Class = "UILabel"; text = "Rockstar Games went bigger, since their previous installment of the series. You get the complicated and realistic world-building from Liberty City of GTA4 in the setting of lively and diverse Los Santos, from an old fan favorite GTA San Andreas. 561 different "; ObjectID = "kAI-YP-VPH"; */
+"kAI-YP-VPH.text" = "Rockstar Games went bigger, since their previous installment of the series. You get the complicated and realistic world-building from Liberty City of GTA4 in the setting of lively and diverse Los Santos, from an old fan favorite GTA San Andreas. 561 different ";
+
+/* Class = "UILabel"; text = "CYBERPUNK 2077"; ObjectID = "kMO-pV-eIx"; */
+"kMO-pV-eIx.text" = "CYBERPUNK 2077";
+
+/* Class = "UITabBarItem"; title = "Favorilerim"; ObjectID = "lpE-sV-fjQ"; */
+"lpE-sV-fjQ.title" = "Meine Favoriten";
+
+/* Class = "UIButton"; configuration.title = "Kaydet"; ObjectID = "lto-E0-7JH"; */
+"lto-E0-7JH.configuration.title" = "Speichern";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "lto-E0-7JH"; */
+"lto-E0-7JH.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "🤩"; ObjectID = "n70-r7-ofP"; */
+"n70-r7-ofP.text" = "🤩";
+
+/* Class = "UILabel"; text = "Grand Theft Auto 5"; ObjectID = "nxY-Xg-jmo"; */
+"nxY-Xg-jmo.text" = "Grand Theft Auto 5";
+
+/* Class = "UITabBarItem"; title = "Ara"; ObjectID = "ov8-Tt-rss"; */
+"ov8-Tt-rss.title" = "Suche";
+
+/* Class = "UILabel"; text = "RED DEAD REDEMPTION 2"; ObjectID = "qeP-85-87F"; */
+"qeP-85-87F.text" = "RED DEAD REDEMPTION 2";
+
+/* Class = "UIButton"; configuration.title = "Geri"; ObjectID = "qf9-no-M71"; */
+"qf9-no-M71.configuration.title" = "Der Rücken";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "qf9-no-M71"; */
+"qf9-no-M71.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Notlarım"; ObjectID = "slW-FY-wur"; */
+"slW-FY-wur.title" = "Meine Notizen";
+
+/* Class = "UILabel"; text = "30%"; ObjectID = "zWe-DI-CFt"; */
+"zWe-DI-CFt.text" = "30%";
+
+

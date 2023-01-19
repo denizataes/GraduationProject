@@ -25,7 +25,7 @@ class SearchViewController: UIViewController{
     private func configure(){
         
         //MARK: NavigationController
-        navigationController?.navigationBar.topItem?.title = "Ara 👀"
+        navigationController?.navigationBar.topItem?.title = "\("Ara".localized()) 👀"
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationController?.navigationBar.tintColor = UIColor.purple
@@ -48,8 +48,8 @@ class SearchViewController: UIViewController{
         searchController.searchBar.returnKeyType = UIReturnKeyType.done
         searchController.searchBar.scopeButtonTitles = sections
         searchController.searchBar.delegate = self
-        searchController.searchBar.setValue("İptal", forKey: "cancelButtonText")
-        searchController.searchBar.placeholder = "Oyun ara... 🎮"
+        searchController.searchBar.setValue("İptal".localized(), forKey: "cancelButtonText")
+        searchController.searchBar.placeholder = "\("Oyun ara...".localized()) 🎮"
 
         
         //MARK: Register cell
@@ -170,8 +170,8 @@ extension SearchViewController: UISearchBarDelegate{
         viewModel.onErrorDetected = { [weak self] messages in
             DispatchQueue.main.async {
                 self?.activityIndicator.stopAnimating()
-                let alertController = UIAlertController(title: "Alert", message: messages, preferredStyle: .alert)
-                alertController.addAction(.init(title: "Ok", style: .default))
+                let alertController = UIAlertController(title: "Uyarı".localized(), message: messages, preferredStyle: .alert)
+                alertController.addAction(.init(title: "Tamam".localized(), style: .default))
                 self?.present(alertController, animated: true, completion: nil)
             }
         }

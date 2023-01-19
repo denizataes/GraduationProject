@@ -25,7 +25,7 @@ class FavoriteViewModel {
               favoriteList?(favList)
               
           case .failure(_):
-              self.onErrorDetected?("Favoriler yüklenirken hata oluştu! Lütfen daha sonra tekrar deneyin.")
+              self.onErrorDetected?("Favoriler yüklenirken hata oluştu! Lütfen daha sonra tekrar deneyin.".localized())
           }
       }
     
@@ -42,11 +42,13 @@ class FavoriteViewModel {
                         case .success():
                             self?.showNotification(title: "", type: NotificationType.favoriteDelete)
                         case .failure(_):
-                            self?.onErrorDetected?("Favori silinirken hata oluştu! Lütfen daha sonra tekrar deneyin.")
+                            self?.onErrorDetected?("Favori silinirken hata oluştu! Lütfen daha sonra tekrar deneyin.".localized())
                         }
+                        
+                        
                     }
                 case .failure(_):
-                    self?.onErrorDetected?("Favori silinirken hata oluştu! Lütfen daha sonra tekrar deneyin.")
+                    self?.onErrorDetected?("Favori silinirken hata oluştu! Lütfen daha sonra tekrar deneyin.".localized())
                 }
             }
         }

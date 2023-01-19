@@ -14,7 +14,7 @@ class LocalNotificationManager: NotificationManagerProtocol {
     
     func didNotificationShow(title: String, type: NotificationType) {
         let content = UNMutableNotificationContent()
-        content.title = "Başarılı ✅"
+        content.title = "\("Başarılı".localized())✅"
         if title.count > 0{
             content.body = ("\(title) \(type.description)")
         }
@@ -39,10 +39,11 @@ enum NotificationType: String, CaseIterable{
     
     var description: String{
         switch self{
-        case .favoriteAdd: return " oyunu favorilerine eklendi.❤️"
-        case .noteAdd: return " oyunu ile ilgili düşüncelerin notlarına eklendi.🤔"
-        case .noteDelete: return "Notun silindi.🗑️"
-        case .favoriteDelete: return "Favorin silindi.🗑️"
+            
+        case .favoriteAdd: return "\(" oyunu favorilerine eklendi.".localized())❤️"
+        case .noteAdd: return "\(" oyunu ile ilgili düşüncelerin notlarına eklendi.".localized())🤔"
+        case .noteDelete: return "\("Notun silindi.".localized())🗑️"
+        case .favoriteDelete: return "\("Favorin silindi.".localized())🗑️"
         }
     }
 }

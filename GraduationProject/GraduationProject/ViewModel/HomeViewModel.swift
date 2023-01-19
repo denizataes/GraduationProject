@@ -35,6 +35,6 @@ extension HomeViewModel: HomeModelProtocol {
   }
   
   func didDataCouldntFetch() {
-    onErrorDetected?("Hata oluştu, lütfen daha sonra tekrar deneyiniz!")
+      onErrorDetected?("Hata oluştu, lütfen daha sonra tekrar deneyiniz!".localized())
   }
 }

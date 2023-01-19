@@ -38,7 +38,7 @@ class SearchGameTableViewCell: UITableViewCell {
             }
         }
         titleLabel.text = model.title
-        playTimeLabel.text = "\(model.playTime) Saat"
+        playTimeLabel.text = "\(model.playTime) \("Saat".localized())"
         releaseDateLabel.text = Utils.shared.convertDate(dateString: model.releaseDate)
         voteLabel.text = "\(model.vote)/5"
     }
