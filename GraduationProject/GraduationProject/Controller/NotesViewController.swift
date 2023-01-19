@@ -62,7 +62,7 @@ extension NotesViewController: UISearchBarDelegate{
         filteredData = noteList
 
         if searchText.isEmpty == false {
-            filteredData = noteList.filter({ $0.noteTitle.contains(searchText) || $0.gameName.contains(searchText) })
+            filteredData = noteList.filter({ $0.noteTitle.lowercased().contains(searchText.lowercased()) || $0.gameName.lowercased().contains(searchText) })
         }
 
         collectionView.reloadData()
