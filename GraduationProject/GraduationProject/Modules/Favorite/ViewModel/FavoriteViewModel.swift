@@ -4,18 +4,18 @@ import CoreData
 class FavoriteViewModel {
     
     // MARK: - Properties
-  var onErrorDetected: ((String) -> ())?
-  var favoriteList: (([FavoriteVM]) -> ())?
-  weak var delegate: NotificationManagerProtocol?
+    var onErrorDetected: ((String) -> ())?
+    var favoriteList: (([FavoriteVM]) -> ())?
+    weak var delegate: NotificationManagerProtocol?
     
-  init(){
-    delegate = LocalNotificationManager.shared
-  }
-
-  
-  func didViewLoad() {
-      fetchFavorites()
-  }
+    init(){
+        delegate = LocalNotificationManager.shared
+    }
+    
+    
+    func didViewLoad() {
+        fetchFavorites()
+    }
     
     func orderByDate(vm: [FavoriteVM]) -> [FavoriteVM]{
         let dateFormatter = DateFormatter()
@@ -30,20 +30,20 @@ class FavoriteViewModel {
         
         return convertedObjects
     }
-  
-  func fetchFavorites() {
-      CoreDataManager.shared.fetch(objectType: Favorites.self) { [self] response in
-          switch response {
-          case .success(let favorites):
-              let favList: [FavoriteVM] = favorites.map{.init(gameID: $0.gameID ?? "", backgroundImage: $0.backgroundImage ?? "", name: $0.name ?? "", createdDate: $0.createdDate ?? "")}
-              favoriteList?(orderByDate(vm: favList))
-              
-          case .failure(_):
-              self.onErrorDetected?("Favoriler yüklenirken hata oluştu! Lütfen daha sonra tekrar deneyin.".localized())
-          }
-      }
     
-  }
+    func fetchFavorites() {
+        CoreDataManager.shared.fetch(objectType: Favorites.self) { [self] response in
+            switch response {
+            case .success(let favorites):
+                let favList: [FavoriteVM] = favorites.map{.init(gameID: $0.gameID ?? "", backgroundImage: $0.backgroundImage ?? "", name: $0.name ?? "", createdDate: $0.createdDate ?? "")}
+                favoriteList?(orderByDate(vm: favList))
+                
+            case .failure(_):
+                self.onErrorDetected?("Favoriler yüklenirken hata oluştu! Lütfen daha sonra tekrar deneyin.".localized())
+            }
+        }
+        
+    }
     
     func deleteFavorite(id: String){
         let context = CoreDataManager.shared.managedContext

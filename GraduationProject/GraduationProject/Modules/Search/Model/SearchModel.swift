@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 protocol SearchModelProtocol: AnyObject {
-  func didSearchDataFetch()
-  func didDataCouldntFetch()
+    func didSearchDataFetch()
+    func didDataCouldntFetch()
 }
 
 class SearchModel{

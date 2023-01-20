@@ -3,16 +3,16 @@ import CoreData
 
 class NoteViewModel {
     
-  // MARK: - Properties
-  var onErrorDetected: ((String) -> ())?
-  var noteList: (([NoteVM]) -> ())?
-  var didNoteDeleted: (() -> ())?
-  weak var delegate: NotificationManagerProtocol?
-
+    // MARK: - Properties
+    var onErrorDetected: ((String) -> ())?
+    var noteList: (([NoteVM]) -> ())?
+    var didNoteDeleted: (() -> ())?
+    weak var delegate: NotificationManagerProtocol?
+    
     init(){
         delegate = LocalNotificationManager.shared
     }
-
+    
     func didViewLoad() {
         fetchNotes()
     }
@@ -70,4 +70,4 @@ class NoteViewModel {
     }
 }
 
-  
+

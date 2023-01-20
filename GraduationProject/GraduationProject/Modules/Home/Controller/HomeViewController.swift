@@ -9,6 +9,7 @@ import UIKit
 
 
 class HomeViewController: UIViewController {
+    
     // MARK: - Properties
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
@@ -17,7 +18,7 @@ class HomeViewController: UIViewController {
     private let viewModel = HomeViewModel()
     private var popularGameList: [SearchCellModel] = []
     private var latestGameList: [LatestCellModel] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
@@ -42,13 +43,13 @@ class HomeViewController: UIViewController {
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.isHidden = true
-    
+        
     }
 }
 
 // MARK: CollectionView Delegate
 extension HomeViewController: UICollectionViewDelegate {
- 
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let vc =  storyboard?.instantiateViewController(withIdentifier: "gameDetailViewController") as? GameDetailViewController{
             let game = latestGameList[indexPath.item]
@@ -58,6 +59,7 @@ extension HomeViewController: UICollectionViewDelegate {
         }
     }
 }
+
 // MARK: CollectionView Datasource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -71,6 +73,7 @@ extension HomeViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
 // MARK: TableViewDelegate
 extension HomeViewController: UITableViewDelegate {
     
@@ -78,9 +81,11 @@ extension HomeViewController: UITableViewDelegate {
 
 // MARK: TableViewDatasource
 extension HomeViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return popularGameList.count
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
@@ -102,44 +107,39 @@ extension HomeViewController: UITableViewDataSource {
         }
     }
     
-    
 }
 
 private extension HomeViewController {
-  
-//  private func setupUI() {
-//    tableHelper = .init(tableView: tableView, viewModel: viewModel)
-//  }
-  
-  func setupBindings() {
-      viewModel.onErrorDetected = { [weak self] messages in
-          DispatchQueue.main.async {
-              self?.collectionViewActivityIndicator.stopAnimating()
-              self?.tableViewActivityIndicator.stopAnimating()
-              let alertController = UIAlertController(title: "Uyarı".localized(), message: messages, preferredStyle: .alert)
-              alertController.addAction(.init(title: "Tamam".localized(), style: .default))
-              self?.present(alertController, animated: true, completion: nil)
-          }
-      }
-      
-      viewModel.latestGames = { [weak self] latestGames in
-          self?.latestGameList = latestGames
-          
-          DispatchQueue.main.async {
-              self?.collectionView.reloadData()
-              self?.collectionViewActivityIndicator.stopAnimating()
-          }
-          
-      }
-      
-      viewModel.popularGames = { [weak self] popularGames in
-          DispatchQueue.main.async {
-              self?.popularGameList = popularGames
-              self?.tableView.reloadData()
-              self?.tableView.isHidden = false
-              self?.tableViewActivityIndicator.stopAnimating()
-              
-          }
-      }
-  }
+    
+    func setupBindings() {
+        
+        viewModel.onErrorDetected = { [weak self] messages in
+            DispatchQueue.main.async {
+                self?.collectionViewActivityIndicator.stopAnimating()
+                self?.tableViewActivityIndicator.stopAnimating()
+                let alertController = UIAlertController(title: "Uyarı".localized(), message: messages, preferredStyle: .alert)
+                alertController.addAction(.init(title: "Tamam".localized(), style: .default))
+                self?.present(alertController, animated: true, completion: nil)
+            }
+        }
+        
+        viewModel.latestGames = { [weak self] latestGames in
+            self?.latestGameList = latestGames
+            
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+                self?.collectionViewActivityIndicator.stopAnimating()
+            }
+        }
+        
+        viewModel.popularGames = { [weak self] popularGames in
+            DispatchQueue.main.async {
+                self?.popularGameList = popularGames
+                self?.tableView.reloadData()
+                self?.tableView.isHidden = false
+                self?.tableViewActivityIndicator.stopAnimating()
+            }
+        }
+    }
+    
 }

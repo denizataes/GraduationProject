@@ -14,7 +14,7 @@ struct GenreResult: Codable {
     let gamesCount: Int?
     let imageBackground: String?
     let games: [GenreGame]?
-
+    
     enum CodingKeys: String, CodingKey {
         case id, name, slug
         case gamesCount = "games_count"

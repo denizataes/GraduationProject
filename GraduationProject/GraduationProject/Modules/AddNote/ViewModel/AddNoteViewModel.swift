@@ -2,10 +2,11 @@ import Foundation
 import CoreData
 
 class AddNoteViewModel {
-
-  var onErrorDetected: (() -> ())?
-  var didNoteSave: (() -> ())?
-
+    
+    var onErrorDetected: (() -> ())?
+    var didNoteSave: (() -> ())?
+    var didNoteUpdate: (() -> ())?
+    
     func saveNote(vm: NoteVM){
         let context = CoreDataManager.shared.managedContext
         if let entity = NSEntityDescription.entity(forEntityName: "Notes", in: context) {
@@ -23,6 +24,31 @@ class AddNoteViewModel {
                     self.didNoteSave?()
                 case .failure(_):
                     self.onErrorDetected?()
+                }
+            }
+        }
+    }
+    
+    func updateNote(vm: NoteVM) {
+        let context = CoreDataManager.shared.managedContext
+        if NSEntityDescription.entity(forEntityName: "Notes", in: context) != nil {
+            CoreDataManager.shared.fetch(objectType: Notes.self, predicate: .init(format: "id = '\(vm.id.uuidString)'")) {[weak self] res in
+                switch(res){
+                case .success(let note):
+                    let updateNote = note[0]
+                    updateNote.noteDescription = vm.noteDescription
+                    updateNote.noteTitle = vm.noteTitle
+                    updateNote.createdDate = Utils.shared.getDate()
+                    CoreDataManager.shared.save(object: updateNote) { result in
+                        switch(result){
+                        case .success(()):
+                            self?.didNoteUpdate?()
+                        case .failure(_):
+                            self?.onErrorDetected?()
+                        }
+                    }
+                case .failure(_):
+                    self?.onErrorDetected?()
                 }
             }
         }

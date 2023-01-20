@@ -32,8 +32,8 @@ class NoteCollectionViewCell: UICollectionViewCell {
         gameTitleLabel.sizeToFit()
         noteDescriptionLabel.sizeToFit()
         noteTitleLabel.sizeToFit()
-
-
+        
+        
     }
     
     func configure(with model: NoteCellModel) {
@@ -52,7 +52,7 @@ class NoteCollectionViewCell: UICollectionViewCell {
         noteTitleLabel.text = model.noteTitle.uppercased()
         noteDescriptionLabel.text = model.noteDescription
     }
-
+    
 }
 
 struct NoteCellModel{

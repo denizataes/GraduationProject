@@ -21,7 +21,7 @@ final class APICaller {
         if let randomPageNumber = randomPageNumber {
             url = url + "&page=\(randomPageNumber)"
         }
-            
+        
         if let url = URL(string: url) {
             
             let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
@@ -122,7 +122,7 @@ final class APICaller {
                 onCompletion(.failure(.failedToGetData))
                 return
             }
-
+            
             guard let results = try? JSONDecoder().decode(GamesResponse.self, from: data) else {
                 onCompletion(.failure(.failedToGetData))
                 return
@@ -135,67 +135,67 @@ final class APICaller {
     
     
     func fetchMainGameDetails(with gameId: String, onCompletion: @escaping (Result<GameDetail, APIError>) -> Void) {
-
+        
         guard let url = URL(string: "\(APIConstants.BASE_URL)/games/\(gameId)?key=\(APIConstants.API_KEY)") else { return }
-
+        
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
                 onCompletion(.failure(.failedToGetData))
                 return
             }
-
+            
             guard let results = try? JSONDecoder().decode(GameDetail.self, from: data) else {
                 onCompletion(.failure(.failedToGetData))
                 return
             }
-
+            
             onCompletion(.success(results))
         }
         task.resume()
     }
-
-
+    
+    
     func fetchSpecificGameDetails<T: Codable>(with gameId: String, expecting: T.Type, onCompletion: @escaping (Result<T, APIError>) -> Void) {
-
+        
         guard let url = URL(string: "\(APIConstants.BASE_URL)/games/\(gameId)?key=\(APIConstants.API_KEY)") else { return }
-
+        
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
                 onCompletion(.failure(.failedToGetData))
                 return
             }
-
+            
             guard let results = try? JSONDecoder().decode(T.self, from: data) else {
                 onCompletion(.failure(.failedToGetData))
                 return
             }
-
+            
             onCompletion(.success(results))
         }
         task.resume()
     }
     
     func fetchPlatform<T: Codable>(url: String, expecting: T.Type, randomPageNumber: Int?, onCompletion: @escaping (Result<T, APIError>) -> Void) {
-
+        
         var url = url
         if let randomPageNumber = randomPageNumber {
             url = url + "&page=\(randomPageNumber)"
         }
-            
+        
         guard let url = URL(string: url) else { return }
         
-
+        
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
                 onCompletion(.failure(.failedToGetData))
                 return
             }
-
+            
             guard let results = try? JSONDecoder().decode(T.self, from: data) else {
                 onCompletion(.failure(.failedToGetData))
                 return
             }
-
+            
             onCompletion(.success(results))
         }
         task.resume()
@@ -209,15 +209,15 @@ final class APICaller {
                 onCompletion(.failure(.failedToGetData))
                 return
             }
-
+            
             guard let results = try? JSONDecoder().decode(T.self, from: data) else {
                 onCompletion(.failure(.failedToGetData))
                 return
             }
-
+            
             onCompletion(.success(results))
         }
         task.resume()
     }
-
+    
 }

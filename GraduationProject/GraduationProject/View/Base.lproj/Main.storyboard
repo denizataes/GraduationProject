@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n0I-uf-fJ3">
-                                <rect key="frame" x="16" y="139" width="361" height="258"/>
+                                <rect key="frame" x="16" y="139" width="361" height="250"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="ZHV-58-ab5"/>
@@ -32,15 +32,15 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" id="Nj3-am-ovf">
-                                    <rect key="frame" x="0.0" y="-23" width="361" height="258"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="250"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="color" systemColor="systemPurpleColor"/>
                                 </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="latestCell" id="24f-Ht-WvL" customClass="LatestCollectionViewCell" customModule="GraduationProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="4.666666666666667" width="159" height="249"/>
+                                        <rect key="frame" x="0.0" y="0.66666666666666663" width="159" height="249"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHg-Tp-EHc">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHg-Tp-EHc">
                                             <rect key="frame" x="0.0" y="0.0" width="159" height="249"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmV-35-IjB">
@@ -105,6 +105,10 @@
                                                 <constraint firstItem="zmV-35-IjB" firstAttribute="top" secondItem="MHg-Tp-EHc" secondAttribute="top" id="KjN-U5-llW"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="top" secondItem="24f-Ht-WvL" secondAttribute="topMargin" constant="-8" id="aqw-EM-REF"/>
+                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="leading" secondItem="24f-Ht-WvL" secondAttribute="leadingMargin" constant="-8" id="wKQ-Me-nJL"/>
+                                        </constraints>
                                         <size key="customSize" width="159" height="249"/>
                                         <connections>
                                             <outlet property="imageView" destination="AE7-y7-a48" id="6oS-WZ-g21"/>
@@ -116,9 +120,6 @@
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En Son Çıkan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbU-ua-R3B">
                                 <rect key="frame" x="16" y="103" width="127" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="lCE-1M-zM3"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -133,7 +134,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popüler" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ct4-EZ-wbc">
-                                <rect key="frame" x="16" y="405" width="72.333333333333329" height="28"/>
+                                <rect key="frame" x="16" y="397" width="72.333333333333329" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="QbP-hB-3qL"/>
                                 </constraints>
@@ -142,13 +143,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Oyunlar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfS-Y3-Eif">
-                                <rect key="frame" x="96.333333333333314" y="405" width="79" height="27.333333333333314"/>
+                                <rect key="frame" x="96.333333333333314" y="397" width="79" height="27.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uiB-do-V4u">
-                                <rect key="frame" x="16" y="437" width="361" height="332"/>
+                                <rect key="frame" x="16" y="429" width="361" height="340"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" id="VBm-9H-zWM">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="20"/>
@@ -156,7 +157,7 @@
                                         <color key="color" systemColor="systemPurpleColor"/>
                                     </activityIndicatorView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="e39-3T-jZb">
-                                        <rect key="frame" x="0.0" y="8" width="361" height="324"/>
+                                        <rect key="frame" x="0.0" y="16" width="361" height="324"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="361" id="4ia-HQ-NUR"/>
@@ -229,7 +230,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewLayout key="collectionViewLayout" id="yUN-I5-0ZD" customClass="PinterestLayout" customModule="GraduationProject" customModuleProvider="target"/>
                                 <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="UHV-s5-R5e">
-                                    <rect key="frame" x="0.0" y="-59" width="393" height="666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="color" systemColor="systemYellowColor"/>
                                 </activityIndicatorView>
@@ -468,7 +469,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="I8o-oa-yLX">
                                         <rect key="frame" x="4.6666666666666572" y="0.0" width="351.66666666666674" height="170"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game1" translatesAutoresizingMaskIntoConstraints="NO" id="nqh-88-Qvt">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nqh-88-Qvt">
                                                 <rect key="frame" x="0.0" y="0.0" width="139" height="170"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="170" id="N1I-0C-i4u"/>
@@ -773,7 +774,7 @@
                                     <action selector="saveBtnClicked:" destination="wdA-aO-omY" eventType="touchUpInside" id="47Y-N9-LTu"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game" translatesAutoresizingMaskIntoConstraints="NO" id="PS2-mD-q9T">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PS2-mD-q9T">
                                 <rect key="frame" x="111" y="125" width="171" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="JAh-Sz-WoZ"/>
@@ -859,6 +860,7 @@
                         <outlet property="nameLabel" destination="qeP-85-87F" id="HWB-nF-nDc"/>
                         <outlet property="noteDescription" destination="fFR-VV-Ypf" id="cyn-eR-eRo"/>
                         <outlet property="noteTitle" destination="vru-ta-Vsv" id="Tpd-QH-Y4c"/>
+                        <outlet property="saveBtn" destination="lto-E0-7JH" id="A6F-tu-gb9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSj-mn-lxu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -927,8 +929,6 @@
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="clock" catalog="system" width="128" height="123"/>
-        <image name="game" width="512" height="512"/>
-        <image name="game1" width="2560" height="1440"/>
         <image name="gamecontroller" catalog="system" width="128" height="79"/>
         <image name="gamecontroller.fill" catalog="system" width="128" height="79"/>
         <image name="heart" catalog="system" width="128" height="107"/>

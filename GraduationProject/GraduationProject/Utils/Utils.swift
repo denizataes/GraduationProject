@@ -29,7 +29,7 @@ class Utils{
         dateFormatter.dateFormat = "DD.MM.YY HH:mm"
         return dateFormatter.string(from: date)
     }
-    
+    ///for pinterestlayout to find height of the font
     func height(for text: String, with font: UIFont, width: CGFloat) -> CGFloat
     {
         let nsstring = NSString(string: text)
@@ -38,6 +38,7 @@ class Utils{
         let boundingRect = nsstring.boundingRect(with: CGSize(width: width, height: maxHeight), options: .usesLineFragmentOrigin, attributes: textAttributes, context: nil)
         return ceil(boundingRect.height)
     }
+    
 }
 
 

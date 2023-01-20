@@ -56,14 +56,14 @@ class FavoritesViewController: UIViewController {
     
 
 }
+
 extension FavoritesViewController: UISearchBarDelegate{
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredData = favoriteList
-
         if searchText.isEmpty == false {
             filteredData = favoriteList.filter({ $0.name.lowercased().contains(searchText.lowercased())})
         }
-
         tableView.reloadData()
     }
     
@@ -78,11 +78,11 @@ extension FavoritesViewController: UISearchBarDelegate{
 }
 
 extension FavoritesViewController: UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let searchBar = searchController.searchBar
         return searchBar.text!.count > 0 ? filteredData.count : favoriteList.count
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as! FavoriteTableViewCell
@@ -91,6 +91,7 @@ extension FavoritesViewController: UITableViewDataSource{
         cell.configure(with: .init(id: model.gameID, name: model.name, backgroundImage: model.backgroundImage, date: model.createdDate))
         return cell
     }
+    
 }
 
 extension FavoritesViewController: UITableViewDelegate{
@@ -98,6 +99,7 @@ extension FavoritesViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "Sil".localized()
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let vc =  storyboard?.instantiateViewController(withIdentifier: "gameDetailViewController") as? GameDetailViewController{
@@ -106,7 +108,6 @@ extension FavoritesViewController: UITableViewDelegate{
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -122,6 +123,7 @@ extension FavoritesViewController: UITableViewDelegate{
 }
 
 extension FavoritesViewController {
+    
     func setupBindings() {
         viewModel.onErrorDetected = { [weak self] messages in
             DispatchQueue.main.async {
@@ -140,4 +142,5 @@ extension FavoritesViewController {
             }
         }
     }
+    
 }

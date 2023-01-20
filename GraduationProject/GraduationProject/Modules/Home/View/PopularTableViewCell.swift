@@ -21,7 +21,7 @@ class PopularTableViewCell: UITableViewCell {
         configureView()
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -49,7 +49,7 @@ class PopularTableViewCell: UITableViewCell {
         viewComponent.layer.cornerRadius = 10
         viewComponent.layer.masksToBounds = true
     }
-
+    
     
     private func configurePhotoView(){
         gameImageView.kf.indicatorType = .activity
@@ -58,7 +58,7 @@ class PopularTableViewCell: UITableViewCell {
         gameImageView.layer.cornerRadius = 4
         gameImageView.layer.shadowRadius = 4
     }
-
+    
 }
 struct PopularCellModel {
     let imageURL: String

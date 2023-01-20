@@ -28,7 +28,7 @@ class GameDetailViewController: UIViewController {
     var imageURL: String = ""
     var genreList = [ResultVM]()
     var platformList = [ResultVM]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.showSpinner(onView: self.view)
@@ -38,6 +38,7 @@ class GameDetailViewController: UIViewController {
     }
     
     private func setupUI(){
+        
         //MARK: Delegates and datasources
         genreTableView.dataSource = self
         platformTableView.dataSource = self
@@ -57,7 +58,9 @@ class GameDetailViewController: UIViewController {
         genreTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
     }
+    
     @IBAction func favoriteBtnClicked(_ sender: UIButton) {
+        
         if favoriteButton.image(for: .normal) == UIImage(systemName: "heart") {
             viewModel.saveFavorite(vm: .init(gameID: id, backgroundImage: imageURL , name: gameTitleLabel.text ?? "", createdDate: Utils.shared.getDate()))
             favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
@@ -66,18 +69,20 @@ class GameDetailViewController: UIViewController {
             viewModel.deleteFavorite(id: id)
             favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
-
+        
     }
+    
     @IBAction func noteBtnClicked(_ sender: UIButton) {
+        
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-         let destVC = storyboard.instantiateViewController(withIdentifier: "addNoteViewController") as! AddNoteViewController
+        let destVC = storyboard.instantiateViewController(withIdentifier: "addNoteViewController") as! AddNoteViewController
         destVC.id = id
         destVC.backgroundImage = imageURL
         destVC.gameName = gameTitleLabel.text ?? ""
-
-         self.present(destVC, animated: true, completion: nil)
+        self.present(destVC, animated: true, completion: nil)
+        
     }
-   
+    
 }
 
 //MARK: TableView Datasources and Delegates
@@ -86,9 +91,10 @@ extension GameDetailViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gameDetailCell", for: indexPath) as! GameDetailTableViewCell
-
+        
         if tableView == genreTableView {
             let model = genreList[indexPath.item]
             cell.configure(imageURL: model.image, title: model.name)
@@ -97,7 +103,7 @@ extension GameDetailViewController: UITableViewDataSource, UITableViewDelegate{
             let model = platformList[indexPath.item]
             cell.configure(imageURL: model.image, title: model.name)
         }
-    
+        
         return cell
     }
     
@@ -109,12 +115,14 @@ extension GameDetailViewController: UITableViewDataSource, UITableViewDelegate{
             return platformList.count
         }
     }
+    
 }
 
 
 //MARK: Bindings
 extension GameDetailViewController{
     func setupBindings() {
+        
         viewModel.onErrorDetected = { [weak self] messages in
             DispatchQueue.main.async {
                 let alertController = UIAlertController(title: "Uyarı".localized(), message: messages, preferredStyle: .alert)
@@ -166,7 +174,6 @@ extension GameDetailViewController{
             }
         }
         
-        
         viewModel.gameDetail = { [weak self] response in
             DispatchQueue.main.async{
                 self?.platformList = response.platforms
@@ -187,5 +194,6 @@ extension GameDetailViewController{
                 self?.removeSpinner()
             }
         }
+        
     }
 }

@@ -15,15 +15,15 @@ class SearchGameTableViewCell: UITableViewCell {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var playTimeLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configurePhotoView()
         configureView()
-
+        
     }
-
-
+    
+    
     func configure(with model: SearchCellModel) {
         
         gameImageView.kf.setImage(with: URL(string: model.imageURL)) { result in
@@ -41,7 +41,7 @@ class SearchGameTableViewCell: UITableViewCell {
         releaseDateLabel.text = Utils.shared.convertDate(dateString: model.releaseDate)
         voteLabel.text = "\(model.vote)/5"
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -60,7 +60,7 @@ class SearchGameTableViewCell: UITableViewCell {
         layer.cornerRadius = 10
         layer.masksToBounds = true
     }
-
+    
 }
 struct SearchCellModel {
     let id: Int
