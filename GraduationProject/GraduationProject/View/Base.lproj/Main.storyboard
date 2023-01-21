@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n0I-uf-fJ3">
-                                <rect key="frame" x="16" y="139" width="361" height="250"/>
+                                <rect key="frame" x="16" y="147" width="361" height="250"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="ZHV-58-ab5"/>
@@ -106,8 +106,8 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <constraints>
-                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="top" secondItem="24f-Ht-WvL" secondAttribute="topMargin" constant="-8" id="aqw-EM-REF"/>
-                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="leading" secondItem="24f-Ht-WvL" secondAttribute="leadingMargin" constant="-8" id="wKQ-Me-nJL"/>
+                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="top" secondItem="24f-Ht-WvL" secondAttribute="topMargin" id="aqw-EM-REF"/>
+                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="leading" secondItem="24f-Ht-WvL" secondAttribute="leadingMargin" id="wKQ-Me-nJL"/>
                                         </constraints>
                                         <size key="customSize" width="159" height="249"/>
                                         <connections>
@@ -119,22 +119,19 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En Son Çıkan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbU-ua-R3B">
-                                <rect key="frame" x="16" y="103" width="127" height="28"/>
+                                <rect key="frame" x="16" y="103" width="127" height="36"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Oyunlar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pl-pW-7hc">
-                                <rect key="frame" x="151" y="103" width="226" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="bhB-Ol-0Gg"/>
-                                </constraints>
+                                <rect key="frame" x="151" y="103" width="226" height="36"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popüler" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ct4-EZ-wbc">
-                                <rect key="frame" x="16" y="397" width="72.333333333333329" height="28"/>
+                                <rect key="frame" x="16" y="405" width="72.333333333333329" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="QbP-hB-3qL"/>
                                 </constraints>
@@ -143,13 +140,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Oyunlar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfS-Y3-Eif">
-                                <rect key="frame" x="96.333333333333314" y="397" width="79" height="27.333333333333314"/>
+                                <rect key="frame" x="96.333333333333314" y="405" width="79" height="27.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uiB-do-V4u">
-                                <rect key="frame" x="16" y="429" width="361" height="340"/>
+                                <rect key="frame" x="16" y="437" width="361" height="332"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" id="VBm-9H-zWM">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="20"/>
@@ -157,7 +154,7 @@
                                         <color key="color" systemColor="systemPurpleColor"/>
                                     </activityIndicatorView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="e39-3T-jZb">
-                                        <rect key="frame" x="0.0" y="16" width="361" height="324"/>
+                                        <rect key="frame" x="0.0" y="8" width="361" height="324"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="361" id="4ia-HQ-NUR"/>

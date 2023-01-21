@@ -21,7 +21,7 @@ class NoteViewModel {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        dateFormatter.dateFormat = "DD.MM.YY HH:mm"
+        dateFormatter.dateFormat = "DD.MM.YYYY HH:mm"
         
         let convertedObjects = vm
             .map { return ($0, dateFormatter.date(from: $0.createdDate)!) }

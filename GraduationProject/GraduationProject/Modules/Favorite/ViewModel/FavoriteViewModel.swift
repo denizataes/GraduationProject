@@ -12,7 +12,6 @@ class FavoriteViewModel {
         delegate = LocalNotificationManager.shared
     }
     
-    
     func didViewLoad() {
         fetchFavorites()
     }
@@ -21,7 +20,7 @@ class FavoriteViewModel {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        dateFormatter.dateFormat = "DD.MM.YY HH:mm"
+        dateFormatter.dateFormat = "DD.MM.YYYY HH:mm"
         
         let convertedObjects = vm
             .map { return ($0, dateFormatter.date(from: $0.createdDate)!) }
@@ -37,7 +36,6 @@ class FavoriteViewModel {
             case .success(let favorites):
                 let favList: [FavoriteVM] = favorites.map{.init(gameID: $0.gameID ?? "", backgroundImage: $0.backgroundImage ?? "", name: $0.name ?? "", createdDate: $0.createdDate ?? "")}
                 favoriteList?(orderByDate(vm: favList))
-                
             case .failure(_):
                 self.onErrorDetected?("Favoriler yüklenirken hata oluştu! Lütfen daha sonra tekrar deneyin.".localized())
             }

@@ -9,7 +9,7 @@ import Foundation
 struct GamesResponse: Codable {
     let count: Int?
     let next: String?
-    let previous: [GameResult]?
+    let previous: String?
     let results: [GameResult]?
     let seoTitle, seoDescription, seoKeywords, seoH1: String?
     let noindex, nofollow: Bool?

@@ -39,14 +39,15 @@ enum NotificationType: String, CaseIterable{
     case noteUpdate
     
     var description: String{
+        
         switch self{
             
         case .favoriteAdd: return "\("oyunu favorilerine eklendi.".localized())❤️"
         case .noteAdd: return "\("oyunu ile ilgili düşüncelerin notlarına eklendi.".localized())🤔"
         case .noteDelete: return "\("Notun silindi.".localized())🗑️"
         case .favoriteDelete: return "\("Favorin silindi.".localized())🗑️"
-        
         case .noteUpdate: return "adlı not güncellendi.".localized()
+            
         }
     }
 }

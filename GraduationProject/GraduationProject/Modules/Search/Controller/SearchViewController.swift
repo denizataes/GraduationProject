@@ -8,6 +8,7 @@
 import UIKit
 
 class SearchViewController: UIViewController{
+    
     //MARK: Defining Properties
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
@@ -16,7 +17,7 @@ class SearchViewController: UIViewController{
     var timeout: Timer?
     let sections: [String] = SearchSection.allCases.map { $0.buttonTitle }
     let searchController = UISearchController()
-    
+    var currentPage = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,8 +71,14 @@ class SearchViewController: UIViewController{
         viewModel.searchGames = { [weak self] searchGames in
             DispatchQueue.main.async {
                 self?.activityIndicator.stopAnimating()
-                self?.searchGameList = searchGames
+                if self!.currentPage > 1{
+                    self?.searchGameList.append(contentsOf: searchGames)
+                }
+                else{
+                    self?.searchGameList = searchGames
+                }
                 self?.tableView.reloadData()
+                self?.currentPage += 1
             }
         }
     }
@@ -88,6 +95,32 @@ extension SearchViewController: UITableViewDelegate{
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastElement = searchGameList.count - 1
+        if indexPath.row == lastElement {
+            let searchBar = searchController.searchBar
+            let searchText = searchBar.text!.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            let scopeButton = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+            
+            switch(scopeButton)
+            {
+            case SearchSection.popularity.buttonTitle:
+                self.viewModel.searchWithPagination(query: searchText ?? "", filter: SearchSection.popularity.buttonTextForQuery, page: currentPage)
+                
+            case SearchSection.released.buttonTitle:
+                self.viewModel.searchWithPagination(query: searchText ?? "", filter: SearchSection.released.buttonTextForQuery, page: currentPage)
+                
+            case SearchSection.name.buttonTitle:
+                self.viewModel.searchWithPagination(query: searchText ?? "", filter: SearchSection.name.buttonTextForQuery, page: currentPage)
+                
+            default:
+                print("")
+            }
+            
+        }
+    }
+    
 }
 //MARK: TableView Datasource
 extension SearchViewController: UITableViewDataSource{
@@ -108,6 +141,7 @@ extension SearchViewController: UITableViewDataSource{
 extension SearchViewController: UISearchResultsUpdating{
     ///If searchController change this method will be trigger.
     func updateSearchResults(for searchController: UISearchController) {
+        currentPage = 0
         let searchBar = searchController.searchBar
         let searchText = searchBar.text!.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         

@@ -17,7 +17,11 @@ class SearchViewModel {
     }
     
     func search(query: String, filter: String){
-        model.fetchSearchData(query: query, filter: filter)
+        model.fetchSearchData(query: query, filter: filter, page: 1)
+    }
+    
+    func searchWithPagination(query: String, filter: String, page: Int){
+        model.fetchSearchData(query: query, filter: filter, page: page)
     }
     
 }

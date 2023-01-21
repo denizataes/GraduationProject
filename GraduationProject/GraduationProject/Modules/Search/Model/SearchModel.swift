@@ -18,8 +18,9 @@ class SearchModel{
     private(set) var searchData: [GameResult] = []
     weak var delegate: SearchModelProtocol?
     
-    func fetchSearchData(query: String, filter: String) {
+    func fetchSearchData(query: String, filter: String, page: Int) {
         APICaller.shared.fetchGamesWithSearchQuery(url: APIConstants.SEARCH_URL,
+                                                   page: page,
                                                    filter: filter,
                                                    query: query,
                                                    expecting: GamesResponse.self) { response in

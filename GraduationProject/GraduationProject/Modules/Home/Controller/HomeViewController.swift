@@ -18,6 +18,10 @@ class HomeViewController: UIViewController {
     private let viewModel = HomeViewModel()
     private var popularGameList: [SearchCellModel] = []
     private var latestGameList: [LatestCellModel] = []
+    private var currentPopularPage = 1
+    private var currentLatestPage = 1
+    
+    private var isLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +40,7 @@ class HomeViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        
         // MARK: TableView
         tableView.register(UINib(nibName: "SearchGameTableViewCell", bundle: nil), forCellReuseIdentifier: "searchCell")
         tableView.delegate = self
@@ -48,7 +53,7 @@ class HomeViewController: UIViewController {
 }
 
 // MARK: CollectionView Delegate
-extension HomeViewController: UICollectionViewDelegate {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let vc =  storyboard?.instantiateViewController(withIdentifier: "gameDetailViewController") as? GameDetailViewController{
@@ -58,6 +63,18 @@ extension HomeViewController: UICollectionViewDelegate {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let lastElement = latestGameList.count - 1
+        if indexPath.item == lastElement {
+            viewModel.fetchLatestDataWithPagination(page: currentLatestPage)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
 }
 
 // MARK: CollectionView Datasource
@@ -72,11 +89,17 @@ extension HomeViewController: UICollectionViewDataSource {
         cell.configure(with: model)
         return cell
     }
+    
 }
 
 // MARK: TableViewDelegate
 extension HomeViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastElement = popularGameList.count - 1
+        if indexPath.row == lastElement {
+            viewModel.fetchPopularDataWithPagination(page: currentPopularPage)
+        }
+    }
 }
 
 // MARK: TableViewDatasource
@@ -124,19 +147,36 @@ private extension HomeViewController {
         }
         
         viewModel.latestGames = { [weak self] latestGames in
-            self?.latestGameList = latestGames
-            
             DispatchQueue.main.async {
+                
+                if self!.currentLatestPage > 1{
+                    self?.latestGameList.append(contentsOf: latestGames)
+                }
+                else{
+                    self?.latestGameList = latestGames
+                }
+                
                 self?.collectionView.reloadData()
+                self?.currentLatestPage += 1
                 self?.collectionViewActivityIndicator.stopAnimating()
             }
+            
         }
         
         viewModel.popularGames = { [weak self] popularGames in
             DispatchQueue.main.async {
-                self?.popularGameList = popularGames
-                self?.tableView.reloadData()
+                
+                if self!.currentPopularPage > 1{
+                    self?.popularGameList.append(contentsOf: popularGames)
+                }
+                else{
+                    self?.popularGameList = popularGames
+                }
+                
+                
+                self?.currentPopularPage += 1
                 self?.tableView.isHidden = false
+                self?.tableView.reloadData()
                 self?.tableViewActivityIndicator.stopAnimating()
             }
         }

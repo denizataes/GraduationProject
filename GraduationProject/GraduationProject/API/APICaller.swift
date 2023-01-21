@@ -14,6 +14,7 @@ enum APIError: Error {
 }
 
 final class APICaller {
+    
     static let shared = APICaller()
     
     func fetchGames<T: Codable>(url: String, expecting: T.Type, randomPageNumber: Int?, onCompletion: @escaping (Result<T, APIError>) -> Void) {
@@ -45,9 +46,9 @@ final class APICaller {
         }
     }
     
-    func fetchGamesWithSearchQuery<T: Codable>(url: String, filter: String, query: String, expecting: T.Type, onCompletion: @escaping (Result<T, APIError>) -> Void) {
+    func fetchGamesWithSearchQuery<T: Codable>(url: String, page: Int, filter: String, query: String, expecting: T.Type, onCompletion: @escaping (Result<T, APIError>) -> Void) {
         
-        if let url = URL(string: url + query + "&ordering=" + filter + "&search_exact=true") {
+        if let url = URL(string: url + query + "&ordering=" + filter + "&search_exact=true&page=" + String(page)) {
             
             let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
                 
@@ -111,27 +112,28 @@ final class APICaller {
     }
     
     
-    func searchGames(with query: String, onCompletion: @escaping (Result<[GameResult], APIError>) -> Void) {
-        
-        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
-        
-        guard let url = URL(string: "\(APIConstants.BASE_URL)/games?key=\(APIConstants.API_KEY)&page_size=20&search=\(query)") else { return }
-        
-        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
-            guard let data = data, error == nil else {
-                onCompletion(.failure(.failedToGetData))
-                return
-            }
-            
-            guard let results = try? JSONDecoder().decode(GamesResponse.self, from: data) else {
-                onCompletion(.failure(.failedToGetData))
-                return
-            }
-            
-            onCompletion(.success(results.results ?? []))
-        }
-        task.resume()
-    }
+//    func searchGames(with query: String, page: Int, onCompletion: @escaping (Result<[GameResult], APIError>) -> Void) {
+//        var url = APIConstants.BASE_URL + "&page_size=20&page=\(page)"
+//
+//        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
+//
+//        guard let url = URL(string: "\(url)&search=\(query)") else { return }
+//
+//        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+//            guard let data = data, error == nil else {
+//                onCompletion(.failure(.failedToGetData))
+//                return
+//            }
+//
+//            guard let results = try? JSONDecoder().decode(GamesResponse.self, from: data) else {
+//                onCompletion(.failure(.failedToGetData))
+//                return
+//            }
+//
+//            onCompletion(.success(results.results ?? []))
+//        }
+//        task.resume()
+//    }
     
     
     func fetchMainGameDetails(with gameId: String, onCompletion: @escaping (Result<GameDetail, APIError>) -> Void) {

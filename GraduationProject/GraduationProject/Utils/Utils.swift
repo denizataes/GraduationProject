@@ -26,7 +26,7 @@ class Utils{
     func getDate() -> String{
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "DD.MM.YY HH:mm"
+        dateFormatter.dateFormat = "DD.MM.YYYY HH:mm"
         return dateFormatter.string(from: date)
     }
     ///for pinterestlayout to find height of the font

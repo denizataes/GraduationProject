@@ -2,18 +2,26 @@ import Foundation
 
 class HomeViewModel {
     // MARK: - Properties
-    private let model = HomeModel()  
+    private let model = HomeModel()
     var onErrorDetected: ((String) -> ())?
     var latestGames: (([LatestCellModel]) -> ())?
     var popularGames: (([SearchCellModel]) -> ())?
     
+    var currentPage = 1
     init() {
         model.delegate = self
     }
     
     func didViewLoad() {
-        model.fetchLatestData()
-        model.fetchPopularData()
+        model.fetchLatestData(pagination: 1)
+        model.fetchPopularData(pagination: 1)
+    }
+    
+    func fetchPopularDataWithPagination(page: Int){
+        model.fetchPopularData(pagination: page)
+    }
+    func fetchLatestDataWithPagination(page: Int){
+        model.fetchLatestData(pagination: page)
     }
     
 }

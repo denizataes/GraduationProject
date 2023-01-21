@@ -13,31 +13,30 @@ class FavoriteTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var gameTitleLabel: UILabel!
     @IBOutlet weak var gameImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
     }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
+    
     private func setupUI(){
+        gameTitleLabel.adjustsFontSizeToFitWidth = true
+        gameTitleLabel.sizeToFit()
+        gameImageView.layer.shadowColor = UIColor.black.cgColor
+        gameImageView.layer.shadowOffset = CGSizeMake(0, 5)
+        gameImageView.layer.shadowOpacity = 1
         gameImageView.kf.indicatorType = .activity
         (gameImageView.kf.indicator?.view as? UIActivityIndicatorView)?.color = .systemRed
         gameImageView.layer.cornerRadius = 5
         gameImageView.layer.shadowRadius = 5
-        gameTitleLabel.adjustsFontSizeToFitWidth = true
-        gameTitleLabel.sizeToFit()
-        
-        
-        gameImageView.layer.shadowColor = UIColor.black.cgColor
-        gameImageView.layer.shadowOffset = CGSizeMake(0, 5)
-        gameImageView.layer.shadowOpacity = 1
     }
     
     func configure(with model: FavoriteCellModel) {
