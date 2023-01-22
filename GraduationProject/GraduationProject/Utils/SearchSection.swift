@@ -13,9 +13,9 @@ enum SearchSection: String, CaseIterable{
     
     var buttonTitle: String{
         switch self{
-        case .popularity: return "Popülerlik"
-        case .released: return "Çıkış Tarihi"
-        case .name: return "İsim"
+        case .popularity: return "Popülerlik".localized()
+        case .released: return "Çıkış Tarihi".localized()
+        case .name: return "İsim".localized()
         }
     }
     

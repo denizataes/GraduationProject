@@ -11,7 +11,6 @@ struct APIConstants {
     
     static let API_KEY = "57a90afafca045ae801f5df813ad7274"
     static let BASE_URL = "https://api.rawg.io/api"
-    
     static let DISCOVER_URL = "\(BASE_URL)/games?key=\(API_KEY)&ordering=-added&page_size=20"
     static let METACRITIC_URL = "\(BASE_URL)/games?key=\(API_KEY)&dates=2000-01-01,2022-12-31&ordering=-metacritic&page_size=20"
     static let LATEST_URL = "\(BASE_URL)/games?key=\(API_KEY)&dates=2022-12-01,2023-01-31&ordering=-added&page_size=20"
