@@ -7,6 +7,7 @@ class AddNoteViewModel {
     var didNoteSave: (() -> ())?
     var didNoteUpdate: (() -> ())?
     
+    ///Saves the note
     func saveNote(vm: NoteVM){
         let context = CoreDataManager.shared.managedContext
         if let entity = NSEntityDescription.entity(forEntityName: "Notes", in: context) {
@@ -28,7 +29,7 @@ class AddNoteViewModel {
             }
         }
     }
-    
+    ///Updates the note
     func updateNote(vm: NoteVM) {
         let context = CoreDataManager.shared.managedContext
         if NSEntityDescription.entity(forEntityName: "Notes", in: context) != nil {

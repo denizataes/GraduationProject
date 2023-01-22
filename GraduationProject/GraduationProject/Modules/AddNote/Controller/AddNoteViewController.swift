@@ -43,7 +43,7 @@ class AddNoteViewController: UIViewController {
         noteTitle.text = titleNote
         noteDescription.text = descriptionNote
         if !noteID.isEmpty {
-            saveBtn.setTitle("Düzenle", for: .normal)
+            saveBtn.setTitle("Düzenle".localized(), for: .normal)
         }
     }
     

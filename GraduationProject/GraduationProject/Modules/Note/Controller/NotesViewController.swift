@@ -95,7 +95,7 @@ extension NotesViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let destVC = storyboard.instantiateViewController(withIdentifier: "addNoteViewController") as! AddNoteViewController
-        let model = noteList[indexPath.item]
+        let model = filteredData.count > 0 ? filteredData[indexPath.item] : noteList[indexPath.item]
         destVC.id = model.gameID
         destVC.backgroundImage = model.imageBackground
         destVC.gameName = model.gameName

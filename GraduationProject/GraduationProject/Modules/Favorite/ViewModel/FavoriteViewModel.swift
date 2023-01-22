@@ -15,7 +15,7 @@ class FavoriteViewModel {
     func didViewLoad() {
         fetchFavorites()
     }
-    
+    ///sort favorites by day
     func orderByDate(vm: [FavoriteVM]) -> [FavoriteVM]{
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -27,7 +27,7 @@ class FavoriteViewModel {
             .map(\.0)
         return convertedObjects
     }
-    
+    ///pulls favorites from coredata
     func fetchFavorites() {
         CoreDataManager.shared.fetch(objectType: Favorites.self) { [self] response in
             switch response {
@@ -40,7 +40,7 @@ class FavoriteViewModel {
         }
         
     }
-    
+    ///delete from favorites
     func deleteFavorite(id: String){
         let context = CoreDataManager.shared.managedContext
         if NSEntityDescription.entity(forEntityName: "Favorites", in: context) != nil {
@@ -63,7 +63,7 @@ class FavoriteViewModel {
             }
         }
     }
-    
+    ///delete from favorites
     func showNotification(title: String, type: NotificationType){
         delegate?.didNotificationShow(title: title, type: type)
     }

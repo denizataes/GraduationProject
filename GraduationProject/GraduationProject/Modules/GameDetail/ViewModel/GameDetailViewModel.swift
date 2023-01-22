@@ -14,7 +14,7 @@ protocol NotificationManagerProtocol: AnyObject {
 
 class GameDetailViewModel{
     
-    // MARK: - Properties
+    // MARK: - Properties and Closures
     private let model = GameDetailModel()
     weak var delegate: NotificationManagerProtocol?
     
@@ -37,7 +37,7 @@ class GameDetailViewModel{
         model.fetchGameDetail(with: id)
         isFavorited(with: id)
     }
-    
+    ///Saves to favorites
     func saveFavorite(vm: FavoriteVM){
         let context = CoreDataManager.shared.managedContext
         if let entity = NSEntityDescription.entity(forEntityName: "Favorites", in: context) {
@@ -56,7 +56,7 @@ class GameDetailViewModel{
             }
         }
     }
-    
+    ///Deletes from favorites
     func deleteFavorite(id: String){
         let context = CoreDataManager.shared.managedContext
         if NSEntityDescription.entity(forEntityName: "Favorites", in: context) != nil {
@@ -77,11 +77,11 @@ class GameDetailViewModel{
             }
         }
     }
-    
+    ///Shows notification from above
     func showNotification(title: String, type: NotificationType){
         delegate?.didNotificationShow(title: title, type: type)
     }
-    
+    ///While the screen is loading, it checks if the game has already been saved to favorites
     func isFavorited(with gameID: String){
         CoreDataManager.shared.fetch(objectType: Favorites.self,
                                      predicate: .init(format: "gameID==\(gameID)")){[weak self] res in
