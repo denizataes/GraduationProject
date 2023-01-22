@@ -21,12 +21,10 @@ class FavoriteViewModel {
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         dateFormatter.dateFormat = "DD.MM.YYYY HH:mm"
-        
         let convertedObjects = vm
             .map { return ($0, dateFormatter.date(from: $0.createdDate)!) }
-            .sorted { $0.1 > $1.1 }
+            .sorted { $0.1 < $1.1 }
             .map(\.0)
-        
         return convertedObjects
     }
     

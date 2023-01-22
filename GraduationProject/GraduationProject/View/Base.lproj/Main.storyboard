@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n0I-uf-fJ3">
-                                <rect key="frame" x="16" y="147" width="361" height="250"/>
+                                <rect key="frame" x="16" y="146" width="361" height="250"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="ZHV-58-ab5"/>
@@ -106,8 +106,8 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <constraints>
-                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="top" secondItem="24f-Ht-WvL" secondAttribute="topMargin" id="aqw-EM-REF"/>
-                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="leading" secondItem="24f-Ht-WvL" secondAttribute="leadingMargin" id="wKQ-Me-nJL"/>
+                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="top" secondItem="24f-Ht-WvL" secondAttribute="topMargin" id="NjI-nk-uKU"/>
+                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="leading" secondItem="24f-Ht-WvL" secondAttribute="leadingMargin" constant="-8" id="p53-x9-4Db"/>
                                         </constraints>
                                         <size key="customSize" width="159" height="249"/>
                                         <connections>
@@ -118,20 +118,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En Son Çıkan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbU-ua-R3B">
-                                <rect key="frame" x="16" y="103" width="127" height="36"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Oyunlar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pl-pW-7hc">
-                                <rect key="frame" x="151" y="103" width="226" height="36"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popüler" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ct4-EZ-wbc">
-                                <rect key="frame" x="16" y="405" width="72.333333333333329" height="28"/>
+                                <rect key="frame" x="16" y="404" width="72.333333333333329" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="QbP-hB-3qL"/>
                                 </constraints>
@@ -139,14 +127,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Oyunlar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfS-Y3-Eif">
-                                <rect key="frame" x="96.333333333333314" y="405" width="79" height="27.333333333333314"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uiB-do-V4u">
-                                <rect key="frame" x="16" y="437" width="361" height="332"/>
+                                <rect key="frame" x="16" y="436" width="361" height="332"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" id="VBm-9H-zWM">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="20"/>
@@ -174,32 +156,38 @@
                                     <constraint firstAttribute="bottom" secondItem="e39-3T-jZb" secondAttribute="bottom" id="ohc-2Z-l8h"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En Son Çıkan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbU-ua-R3B">
+                                <rect key="frame" x="16" y="111" width="361" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="361" id="5Z0-Li-8t6"/>
+                                    <constraint firstAttribute="height" constant="27" id="Ujs-Fn-K0H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bbU-ua-R3B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0k4-p2-ict"/>
-                            <constraint firstItem="bbU-ua-R3B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1Go-GI-eHb"/>
                             <constraint firstItem="uiB-do-V4u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="4if-Zw-qpe"/>
-                            <constraint firstItem="n0I-uf-fJ3" firstAttribute="top" secondItem="bbU-ua-R3B" secondAttribute="bottom" constant="8" id="4mo-yG-8MK"/>
-                            <constraint firstItem="PfS-Y3-Eif" firstAttribute="top" secondItem="n0I-uf-fJ3" secondAttribute="bottom" constant="8" id="9vC-TV-u0l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ct4-EZ-wbc" secondAttribute="trailing" symbolic="YES" id="6MD-k9-TCv"/>
+                            <constraint firstItem="bbU-ua-R3B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="HI5-2B-v4D"/>
+                            <constraint firstItem="bbU-ua-R3B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="JJb-ES-ZKh"/>
                             <constraint firstItem="uiB-do-V4u" firstAttribute="leading" secondItem="ct4-EZ-wbc" secondAttribute="leading" id="JLg-aK-K5D"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PfS-Y3-Eif" secondAttribute="trailing" symbolic="YES" id="LEr-Bg-nZW"/>
+                            <constraint firstItem="n0I-uf-fJ3" firstAttribute="top" secondItem="bbU-ua-R3B" secondAttribute="bottom" constant="8" id="KjL-4E-1Uh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uiB-do-V4u" secondAttribute="trailing" constant="16" id="Lor-SE-9dp"/>
-                            <constraint firstItem="n0I-uf-fJ3" firstAttribute="top" secondItem="bbU-ua-R3B" secondAttribute="bottom" constant="8" id="Mm4-lZ-7nG"/>
-                            <constraint firstItem="7pl-pW-7hc" firstAttribute="leading" secondItem="bbU-ua-R3B" secondAttribute="trailing" constant="8" id="NPX-Db-Uga"/>
+                            <constraint firstItem="bbU-ua-R3B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="M64-jh-Vg1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bbU-ua-R3B" secondAttribute="trailing" constant="16" id="Qu0-XH-JID"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="n0I-uf-fJ3" secondAttribute="trailing" constant="16" id="Rqs-Xu-AH7"/>
                             <constraint firstItem="uiB-do-V4u" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="SLA-3A-99a"/>
-                            <constraint firstItem="PfS-Y3-Eif" firstAttribute="leading" secondItem="ct4-EZ-wbc" secondAttribute="trailing" constant="8" id="Y3B-aJ-8dd"/>
-                            <constraint firstItem="7pl-pW-7hc" firstAttribute="leading" secondItem="bbU-ua-R3B" secondAttribute="trailing" constant="8" id="YSA-Oj-ovH"/>
-                            <constraint firstItem="n0I-uf-fJ3" firstAttribute="top" secondItem="7pl-pW-7hc" secondAttribute="bottom" constant="8" id="asZ-IY-e8l"/>
                             <constraint firstItem="ct4-EZ-wbc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bBb-kR-g40"/>
+                            <constraint firstItem="bbU-ua-R3B" firstAttribute="leading" secondItem="n0I-uf-fJ3" secondAttribute="leading" id="efa-yH-GQh"/>
                             <constraint firstItem="ct4-EZ-wbc" firstAttribute="top" secondItem="n0I-uf-fJ3" secondAttribute="bottom" constant="8" symbolic="YES" id="hPf-pg-xjT"/>
-                            <constraint firstItem="7pl-pW-7hc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hcx-wg-rPz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bbU-ua-R3B" secondAttribute="trailing" symbolic="YES" id="hXa-DE-HM0"/>
                             <constraint firstItem="n0I-uf-fJ3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="mV2-1H-AwV"/>
                             <constraint firstItem="uiB-do-V4u" firstAttribute="top" secondItem="ct4-EZ-wbc" secondAttribute="bottom" constant="4" id="pXV-D0-uBp"/>
                             <constraint firstItem="uiB-do-V4u" firstAttribute="trailing" secondItem="n0I-uf-fJ3" secondAttribute="trailing" id="uEW-mC-wXV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7pl-pW-7hc" secondAttribute="trailing" constant="16" id="vJg-q2-Zmh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DHr-lS-HxU"/>
