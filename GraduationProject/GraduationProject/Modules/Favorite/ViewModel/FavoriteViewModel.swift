@@ -15,24 +15,20 @@ class FavoriteViewModel {
     func didViewLoad() {
         fetchFavorites()
     }
-    
+    ///sort favorites by day
     func orderByDate(vm: [FavoriteVM]) -> [FavoriteVM]{
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        dateFormatter.dateFormat = "DD.MM.YYYY HH:mm"
         let convertedObjects = vm
-            .map { return ($0, dateFormatter.date(from: $0.createdDate)!) }
-            .sorted { $0.1 < $1.1 }
-            .map(\.0)
+            .sorted { $0.createdDate > $1.createdDate }
         return convertedObjects
     }
-    
+
+
+    ///pulls favorites from coredata
     func fetchFavorites() {
         CoreDataManager.shared.fetch(objectType: Favorites.self) { [self] response in
             switch response {
             case .success(let favorites):
-                let favList: [FavoriteVM] = favorites.map{.init(gameID: $0.gameID ?? "", backgroundImage: $0.backgroundImage ?? "", name: $0.name ?? "", createdDate: $0.createdDate ?? "")}
+                let favList: [FavoriteVM] = favorites.map{.init(gameID: $0.gameID ?? "", backgroundImage: $0.backgroundImage ?? "", name: $0.name ?? "", createdDate: $0.createdDate ?? Date() )}
                 favoriteList?(orderByDate(vm: favList))
             case .failure(_):
                 self.onErrorDetected?("Favoriler yüklenirken hata oluştu! Lütfen daha sonra tekrar deneyin.".localized())
@@ -40,7 +36,7 @@ class FavoriteViewModel {
         }
         
     }
-    
+    ///delete from favorites
     func deleteFavorite(id: String){
         let context = CoreDataManager.shared.managedContext
         if NSEntityDescription.entity(forEntityName: "Favorites", in: context) != nil {
@@ -63,7 +59,7 @@ class FavoriteViewModel {
             }
         }
     }
-    
+    ///delete from favorites
     func showNotification(title: String, type: NotificationType){
         delegate?.didNotificationShow(title: title, type: type)
     }

@@ -6,8 +6,8 @@ class HomeViewModel {
     var onErrorDetected: ((String) -> ())?
     var latestGames: (([LatestCellModel]) -> ())?
     var popularGames: (([SearchCellModel]) -> ())?
-    
     var currentPage = 1
+    
     init() {
         model.delegate = self
     }
@@ -16,10 +16,11 @@ class HomeViewModel {
         model.fetchLatestData(pagination: 1)
         model.fetchPopularData(pagination: 1)
     }
-    
+    ///this method is triggered if the last item is reached.
     func fetchPopularDataWithPagination(page: Int){
         model.fetchPopularData(pagination: page)
     }
+    ///this method is triggered if the last item is reached.
     func fetchLatestDataWithPagination(page: Int){
         model.fetchLatestData(pagination: page)
     }

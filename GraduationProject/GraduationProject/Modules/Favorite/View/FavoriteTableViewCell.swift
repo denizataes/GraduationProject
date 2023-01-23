@@ -50,7 +50,7 @@ class FavoriteTableViewCell: UITableViewCell {
             }
         }
         gameTitleLabel.text = model.name.uppercased()
-        dateLabel.text = model.date
+        dateLabel.text = Utils.shared.getDate(date: model.date)
     }
     
 }
@@ -59,5 +59,5 @@ struct FavoriteCellModel{
     var id: String
     var name: String
     var backgroundImage: String
-    var date: String
+    var date: Date
 }

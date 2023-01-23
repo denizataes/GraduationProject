@@ -3,7 +3,7 @@ import CoreData
 
 class NoteViewModel {
     
-    // MARK: - Properties
+    // MARK: - Properties and closures
     var onErrorDetected: ((String) -> ())?
     var noteList: (([NoteVM]) -> ())?
     var didNoteDeleted: (() -> ())?
@@ -17,24 +17,20 @@ class NoteViewModel {
         fetchNotes()
     }
     
-    func orderByDate(vm: [NoteVM]) -> [NoteVM] {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        dateFormatter.dateFormat = "DD.MM.YYYY HH:mm"
+    ///sort notes by date
+    func orderByDate(vm: [NoteVM]) -> [NoteVM]{
         let convertedObjects = vm
-            .map { return ($0, dateFormatter.date(from: $0.createdDate)!) }
-            .sorted { $0.1 < $1.1 }
-            .map(\.0)
+            .sorted { $0.createdDate > $1.createdDate }
         return convertedObjects
     }
 
-    
+
+    ///Pulls notes from coredata
     func fetchNotes() {
         CoreDataManager.shared.fetch(objectType: Notes.self) { [weak self] response in
             switch response {
             case .success(let notes):
-                let noteList: [NoteVM] = notes.map{.init(id:$0.id ?? UUID() ,gameID: $0.gameID ?? "", gameName: $0.name ?? "", noteTitle: $0.noteTitle ?? "", noteDescription: $0.noteDescription ?? "", imageBackground: $0.backgroundImage ?? "", createdDate: $0.createdDate ?? "")
+                let noteList: [NoteVM] = notes.map{.init(id:$0.id ?? UUID() ,gameID: $0.gameID ?? "", gameName: $0.name ?? "", noteTitle: $0.noteTitle ?? "", noteDescription: $0.noteDescription ?? "", imageBackground: $0.backgroundImage ?? "", createdDate: $0.createdDate ?? Date())
                 }
                 self?.noteList?(self?.orderByDate(vm: noteList) ?? [])
             case .failure(_):
@@ -43,10 +39,12 @@ class NoteViewModel {
         }
     }
     
+    ///shows notification above
     func showNotification(title: String, type: NotificationType){
         delegate?.didNotificationShow(title: title, type: type)
     }
     
+    ///Deletes the note
     func deleteNotes(id: UUID){
         let context = CoreDataManager.shared.managedContext
         if NSEntityDescription.entity(forEntityName: "Notes", in: context) != nil {

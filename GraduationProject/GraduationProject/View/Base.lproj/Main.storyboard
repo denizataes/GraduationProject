@@ -80,7 +80,6 @@
                                                         <constraint firstItem="8pY-jQ-Fnd" firstAttribute="top" secondItem="nxY-Xg-jmo" secondAttribute="bottom" constant="3" id="0zj-DA-11X"/>
                                                         <constraint firstAttribute="height" constant="250" id="2aT-gp-xXF"/>
                                                         <constraint firstAttribute="bottom" secondItem="8pY-jQ-Fnd" secondAttribute="bottom" constant="5.6699999999999999" id="70c-7q-x9I"/>
-                                                        <constraint firstAttribute="width" constant="160" id="72K-4I-Il6"/>
                                                         <constraint firstItem="AE7-y7-a48" firstAttribute="leading" secondItem="zmV-35-IjB" secondAttribute="leading" id="9DD-dc-yf3"/>
                                                         <constraint firstItem="nxY-Xg-jmo" firstAttribute="leading" secondItem="zmV-35-IjB" secondAttribute="leading" id="ADq-0B-CC0"/>
                                                         <constraint firstAttribute="bottom" secondItem="Y34-wY-zwH" secondAttribute="bottom" constant="8" id="Aqe-T7-v51"/>
@@ -106,8 +105,8 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <constraints>
-                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="leading" secondItem="24f-Ht-WvL" secondAttribute="leadingMargin" constant="-8" id="Jwt-UP-Kyj"/>
-                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="top" secondItem="24f-Ht-WvL" secondAttribute="topMargin" constant="-8" id="tjX-hy-i1l"/>
+                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="leading" secondItem="24f-Ht-WvL" secondAttribute="leadingMargin" constant="-8" id="Odd-9d-o9B"/>
+                                            <constraint firstItem="MHg-Tp-EHc" firstAttribute="top" secondItem="24f-Ht-WvL" secondAttribute="topMargin" constant="-8" id="W5o-KJ-Xgh"/>
                                         </constraints>
                                         <size key="customSize" width="159" height="249"/>
                                         <connections>

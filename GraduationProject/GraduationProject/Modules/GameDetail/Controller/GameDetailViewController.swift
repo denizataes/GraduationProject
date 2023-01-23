@@ -62,7 +62,7 @@ class GameDetailViewController: UIViewController {
     @IBAction func favoriteBtnClicked(_ sender: UIButton) {
         
         if favoriteButton.image(for: .normal) == UIImage(systemName: "heart") {
-            viewModel.saveFavorite(vm: .init(gameID: id, backgroundImage: imageURL , name: gameTitleLabel.text ?? "", createdDate: Utils.shared.getDate()))
+            viewModel.saveFavorite(vm: .init(gameID: id, backgroundImage: imageURL , name: gameTitleLabel.text ?? "", createdDate: Date()))
             favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }
         else{

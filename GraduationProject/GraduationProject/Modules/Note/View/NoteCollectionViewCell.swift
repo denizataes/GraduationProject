@@ -48,7 +48,7 @@ class NoteCollectionViewCell: UICollectionViewCell {
             }
         }
         gameTitleLabel.text = model.gameTitle
-        createdDateLabel.text = model.createdDate
+        createdDateLabel.text = Utils.shared.getDate(date: model.createdDate)
         noteTitleLabel.text = model.noteTitle.uppercased()
         noteDescriptionLabel.text = model.noteDescription
     }
@@ -58,7 +58,7 @@ class NoteCollectionViewCell: UICollectionViewCell {
 struct NoteCellModel{
     var gameTitle: String
     var imageBackground: String
-    var createdDate: String
+    var createdDate: Date
     var noteTitle: String
     var noteDescription: String
 }

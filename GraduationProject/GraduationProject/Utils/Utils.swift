@@ -22,13 +22,14 @@ class Utils{
         return monthAndYear
         
     }
+    
     /// get formatted date
-    func getDate() -> String{
-        let date = Date()
+    func getDate(date: Date) -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "DD.MM.YYYY HH:mm"
         return dateFormatter.string(from: date)
     }
+    
     ///for pinterestlayout to find height of the font
     func height(for text: String, with font: UIFont, width: CGFloat) -> CGFloat
     {

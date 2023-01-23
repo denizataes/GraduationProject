@@ -17,9 +17,7 @@ class PopularTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        configurePhotoView()
-        configureView()
-        
+        setupUI()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -45,15 +43,10 @@ class PopularTableViewCell: UITableViewCell {
         releaseDateLabel.text = Utils.shared.convertDate(dateString: model.releaseDate)
     }
     
-    private func configureView(){
+    private func setupUI(){
         viewComponent.layer.cornerRadius = 10
         viewComponent.layer.masksToBounds = true
-    }
-    
-    
-    private func configurePhotoView(){
         gameImageView.kf.indicatorType = .activity
-        
         (gameImageView.kf.indicator?.view as? UIActivityIndicatorView)?.color = .purple
         gameImageView.layer.cornerRadius = 4
         gameImageView.layer.shadowRadius = 4

@@ -48,6 +48,7 @@ class SearchViewController: UIViewController{
         //MARK: SearchController
         searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.enablesReturnKeyAutomatically = true
         searchController.searchBar.returnKeyType = UIReturnKeyType.done
@@ -139,8 +140,12 @@ extension SearchViewController: UITableViewDataSource{
 }
 //MARK: UISearchbar Delegate
 extension SearchViewController: UISearchResultsUpdating{
-    ///If searchController change this method will be trigger.
     func updateSearchResults(for searchController: UISearchController) {
+        /// Not used
+    }
+    
+    ///If searchController change this method will be trigger.
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         currentPage = 0
         let searchBar = searchController.searchBar
         let searchText = searchBar.text!.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
@@ -183,5 +188,58 @@ extension SearchViewController: UISearchResultsUpdating{
                 self.tableView.reloadData()
             })
         }
+    }
+}
+extension SearchViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        currentPage = 0
+        let searchBar = searchController.searchBar
+        let searchText = searchBar.text!.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        
+        if searchText!.count == 0 {
+            DispatchQueue.main.async {
+                self.searchGameList.removeAll()
+                self.tableView.reloadData()
+            }
+        }
+        else if searchText!.count > 2{
+            timeout?.invalidate()
+            timeout = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (timer) in
+                let scopeButton = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+                self.activityIndicator.startAnimating()
+                let searchText = searchBar.text!.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+                
+                if searchText!.count == 0 {
+                    DispatchQueue.main.async {
+                        self.searchGameList.removeAll()
+                        self.tableView.reloadData()
+                    }
+                }
+                else if searchText!.count > 2{
+                    switch(scopeButton)
+                    {
+                    case SearchSection.popularity.buttonTitle:
+                        self.viewModel.search(query: searchText ?? "", filter: SearchSection.popularity.buttonTextForQuery)
+                        
+                    case SearchSection.released.buttonTitle:
+                        self.viewModel.search(query: searchText ?? "", filter: SearchSection.released.buttonTextForQuery)
+                        
+                    case SearchSection.name.buttonTitle:
+                        self.viewModel.search(query: searchText ?? "", filter: SearchSection.name.buttonTextForQuery)
+                        
+                    default:
+                        print("")
+                    }
+                }
+                self.tableView.reloadData()
+            })
+        }
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        ///if the cancel button is clicked, empty the array, the screen remains blank
+        self.activityIndicator.stopAnimating()
+        self.searchGameList.removeAll()
+        searchBar.text = ""
+        self.tableView.reloadData()
     }
 }

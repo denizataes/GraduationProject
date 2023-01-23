@@ -86,8 +86,7 @@ extension FavoritesViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as! FavoriteTableViewCell
-        let searchBar = searchController.searchBar
-        let model = searchBar.text!.count > 0 ? filteredData[indexPath.item] : favoriteList[indexPath.item]
+        let model = filteredData.count > 0 ? filteredData[indexPath.item] : favoriteList[indexPath.item]
         cell.configure(with: .init(id: model.gameID, name: model.name, backgroundImage: model.backgroundImage, date: model.createdDate))
         return cell
     }
@@ -103,7 +102,7 @@ extension FavoritesViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let vc =  storyboard?.instantiateViewController(withIdentifier: "gameDetailViewController") as? GameDetailViewController{
-            let game = favoriteList[indexPath.row]
+            let game = filteredData.count > 0 ? filteredData[indexPath.row] : favoriteList[indexPath.row]
             vc.id = game.gameID
             self.navigationController?.pushViewController(vc, animated: true)
         }

@@ -15,11 +15,11 @@ class SearchViewModel {
     init() {
         model.delegate = self
     }
-    
+    ///Sends the searched word to the API
     func search(query: String, filter: String){
         model.fetchSearchData(query: query, filter: filter, page: 1)
     }
-    
+    ///this method is triggered if the last item is reached.
     func searchWithPagination(query: String, filter: String, page: Int){
         model.fetchSearchData(query: query, filter: filter, page: page)
     }

@@ -7,6 +7,7 @@ class AddNoteViewModel {
     var didNoteSave: (() -> ())?
     var didNoteUpdate: (() -> ())?
     
+    ///Saves the note
     func saveNote(vm: NoteVM){
         let context = CoreDataManager.shared.managedContext
         if let entity = NSEntityDescription.entity(forEntityName: "Notes", in: context) {
@@ -29,6 +30,7 @@ class AddNoteViewModel {
         }
     }
     
+    ///Updates the note
     func updateNote(vm: NoteVM) {
         let context = CoreDataManager.shared.managedContext
         if NSEntityDescription.entity(forEntityName: "Notes", in: context) != nil {
@@ -38,7 +40,7 @@ class AddNoteViewModel {
                     let updateNote = note[0]
                     updateNote.noteDescription = vm.noteDescription
                     updateNote.noteTitle = vm.noteTitle
-                    updateNote.createdDate = Utils.shared.getDate()
+                    updateNote.createdDate = Date()
                     CoreDataManager.shared.save(object: updateNote) { result in
                         switch(result){
                         case .success(()):
@@ -62,5 +64,5 @@ struct NoteVM{
     var noteTitle: String
     var noteDescription: String
     var imageBackground: String
-    var createdDate: String
+    var createdDate: Date
 }

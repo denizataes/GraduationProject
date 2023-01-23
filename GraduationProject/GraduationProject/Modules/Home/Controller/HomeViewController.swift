@@ -15,13 +15,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionViewActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableViewActivityIndicator: UIActivityIndicatorView!
+    
     private let viewModel = HomeViewModel()
     private var popularGameList: [SearchCellModel] = []
     private var latestGameList: [LatestCellModel] = []
     private var currentPopularPage = 1
     private var currentLatestPage = 1
-    
-    private var isLoading = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,14 +148,12 @@ private extension HomeViewController {
         
         viewModel.latestGames = { [weak self] latestGames in
             DispatchQueue.main.async {
-                
                 if self!.currentLatestPage > 1{
                     self?.latestGameList.append(contentsOf: latestGames)
                 }
                 else{
                     self?.latestGameList = latestGames
                 }
-                
                 self?.collectionView.reloadData()
                 self?.currentLatestPage += 1
                 self?.collectionViewActivityIndicator.stopAnimating()
@@ -165,15 +163,12 @@ private extension HomeViewController {
         
         viewModel.popularGames = { [weak self] popularGames in
             DispatchQueue.main.async {
-                
                 if self!.currentPopularPage > 1{
                     self?.popularGameList.append(contentsOf: popularGames)
                 }
                 else{
                     self?.popularGameList = popularGames
                 }
-                
-                
                 self?.currentPopularPage += 1
                 self?.tableView.isHidden = false
                 self?.tableView.reloadData()
