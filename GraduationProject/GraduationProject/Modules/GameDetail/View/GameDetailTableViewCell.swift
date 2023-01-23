@@ -15,10 +15,10 @@ class GameDetailTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configurePhotoView()
+        setupUI()
     }
     
-    private func configurePhotoView(){
+    private func setupUI(){
         cellImageView.kf.indicatorType = .activity
         
         (cellImageView.kf.indicator?.view as? UIActivityIndicatorView)?.color = .systemGray2

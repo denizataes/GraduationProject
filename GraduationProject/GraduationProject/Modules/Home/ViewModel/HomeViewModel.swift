@@ -6,8 +6,8 @@ class HomeViewModel {
     var onErrorDetected: ((String) -> ())?
     var latestGames: (([LatestCellModel]) -> ())?
     var popularGames: (([SearchCellModel]) -> ())?
-    
     var currentPage = 1
+    
     init() {
         model.delegate = self
     }

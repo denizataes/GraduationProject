@@ -182,5 +182,5 @@ struct FavoriteVM {
     var gameID: String
     var backgroundImage: String
     var name: String
-    var createdDate: String
+    var createdDate: Date
 }

@@ -50,14 +50,14 @@ class AddNoteViewController: UIViewController {
     @IBAction func saveBtnClicked(_ sender: UIButton) {
         if onSaveNotes(){
             if noteID.isEmpty{
-                viewModel.saveNote(vm: .init(id: UUID(), gameID: id, gameName: gameName , noteTitle: noteTitle.text ?? "", noteDescription: noteDescription.text ?? "", imageBackground: backgroundImage, createdDate: Utils.shared.getDate()))
+                viewModel.saveNote(vm: .init(id: UUID(), gameID: id, gameName: gameName , noteTitle: noteTitle.text ?? "", noteDescription: noteDescription.text ?? "", imageBackground: backgroundImage, createdDate: Date()))
             }
             else{
-                viewModel.updateNote(vm: .init(id: UUID(uuidString: noteID)!, gameID: id, gameName: gameName , noteTitle: noteTitle.text ?? "", noteDescription: noteDescription.text ?? "", imageBackground: backgroundImage, createdDate: Utils.shared.getDate()))
+                viewModel.updateNote(vm: .init(id: UUID(uuidString: noteID)!, gameID: id, gameName: gameName , noteTitle: noteTitle.text ?? "", noteDescription: noteDescription.text ?? "", imageBackground: backgroundImage, createdDate: Date()))
             }
         }
     }
-    
+    ///Before saving, it checks whether the data is filled on the screen.
     private func onSaveNotes() -> Bool{
         var result: Bool = true
         if noteTitle.text == "" {

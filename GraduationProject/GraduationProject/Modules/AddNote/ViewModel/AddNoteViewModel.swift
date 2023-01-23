@@ -39,7 +39,7 @@ class AddNoteViewModel {
                     let updateNote = note[0]
                     updateNote.noteDescription = vm.noteDescription
                     updateNote.noteTitle = vm.noteTitle
-                    updateNote.createdDate = Utils.shared.getDate()
+                    updateNote.createdDate = Date()
                     CoreDataManager.shared.save(object: updateNote) { result in
                         switch(result){
                         case .success(()):
@@ -63,5 +63,5 @@ struct NoteVM{
     var noteTitle: String
     var noteDescription: String
     var imageBackground: String
-    var createdDate: String
+    var createdDate: Date
 }

@@ -15,12 +15,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionViewActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableViewActivityIndicator: UIActivityIndicatorView!
+    
     private let viewModel = HomeViewModel()
     private var popularGameList: [SearchCellModel] = []
     private var latestGameList: [LatestCellModel] = []
     private var currentPopularPage = 1
     private var currentLatestPage = 1
-    
     private var isLoading = false
     
     override func viewDidLoad() {
