@@ -168,7 +168,7 @@ extension NotesViewController : PinterestLayoutDelegate {
         let note = noteList[indexPath.item]
         let captionFont = UIFont.systemFont(ofSize: 10)
         let captionHeight = Utils.shared.height(for: note.noteDescription, with: captionFont, width: width)
-        return captionHeight-48
+        return captionHeight - 48
     }
     
 }

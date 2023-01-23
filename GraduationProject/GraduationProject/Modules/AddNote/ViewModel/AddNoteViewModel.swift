@@ -29,6 +29,7 @@ class AddNoteViewModel {
             }
         }
     }
+    
     ///Updates the note
     func updateNote(vm: NoteVM) {
         let context = CoreDataManager.shared.managedContext
