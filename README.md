@@ -78,15 +78,16 @@ To view the application with these languages, you must change the language optio
 ## Screenshots 📸
 
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/85442526/213945238-9ebeb62f-1809-44a8-acf3-9e4062f88973.png" width="250" />
-  <img src="https://user-images.githubusercontent.com/85442526/213945337-acf4999b-2e44-47c0-a005-449badf7b758.png" width="250" /> 
-  <img src="https://user-images.githubusercontent.com/85442526/213944986-1df801dc-021a-4a77-8394-b909aae5cbbe.png" width="250" />
+  <img src="https://user-images.githubusercontent.com/85442526/214095283-44a8f0b6-f9d6-4e4a-9bf8-b2fa20f582bf.png" width="250" />
+  <img src="https://user-images.githubusercontent.com/85442526/214095308-ffae423c-43d9-423c-95c9-3d65fa84a6b6.png" width="250" /> 
+  <img src="https://user-images.githubusercontent.com/85442526/214095320-c54033fc-153d-4af5-877d-a15622e303cf.png" width="250" />
 </p>
 
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/85442526/213944988-88ec0cc2-c38d-4026-8dbb-36de8f981e40.png" width="250" />
-  <img src="https://user-images.githubusercontent.com/85442526/213944991-6d9ccc0b-4992-4a9f-9d7e-928f0ab0b198.png" width="250" /> 
-  <img src="https://user-images.githubusercontent.com/85442526/213944994-eb0f8385-cf38-4e65-ba9a-8dc07ef20985.png" width="250" />
+  <img src="https://user-images.githubusercontent.com/85442526/214095346-cc03edd9-d4f6-4b93-b32e-ad856828369f.png" width="250" />
+  <img src="https://user-images.githubusercontent.com/85442526/214095351-ed2c076c-1184-42ca-82b8-740832c43029.png" width="250" /> 
+  <img src="https://user-images.githubusercontent.com/85442526/214095357-a8da1540-cec7-4472-becf-eb91f8d9812c.png" width="250" />
+  <img src="https://user-images.githubusercontent.com/85442526/214095365-011b7e77-4028-4a40-bc83-450c24ab7bdb.png" width="250" />
 </p>
 <p float="center">
   <img src="https://user-images.githubusercontent.com/85442526/213944999-848b1d75-6868-4301-a90f-cfa5a2229c09.png" width="750" />
