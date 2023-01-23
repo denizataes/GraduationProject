@@ -141,7 +141,7 @@ extension SearchViewController: UITableViewDataSource{
 //MARK: UISearchbar Delegate
 extension SearchViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
-        
+        /// Not used
     }
     
     ///If searchController change this method will be trigger.
